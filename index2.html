@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Frontend Bootcamp - Presentación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/league.css" />
+    <script src="./dist/reveal.js"></script>
+    <style>
+      code {
+        font-size: 0.8em;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Título -->
+        <section>
+          <h1>Frontend Bootcamp</h1>
+          <h2>Tailwind CSS, Componentes y Testing</h2>
+          <p>Presentado por: [Tu Nombre]</p>
+        </section>
+
+        <!-- Tema 1: Tailwind CSS -->
+        <section>
+          <h2>Tema 1: Tailwind CSS</h2>
+        </section>
+
+        <section>
+          <h3>¿Qué es Tailwind?</h3>
+          <p class="fade-in">Imagina construir una casa con bloques LEGO 🧱</p>
+          <ul>
+            <li class="fade-in">
+              <strong>CSS tradicional:</strong> fabricas cada bloque desde cero
+              🛠️
+            </li>
+            <li class="fade-in">
+              <strong>Tailwind CSS:</strong> usas bloques listos para armar 🧩
+            </li>
+          </ul>
+          <pre class="fade-in"><code class="hljs html" data-trim>
+<!-- Tailwind -->
+<div class="bg-white p-4 rounded shadow">
+  Contenido dentro de un "bloque"
+</div>
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>¿Para qué sirve?</h3>
+          <ul>
+            <li>Estilizar interfaces rápidamente</li>
+            <li>Facilita mantener consistencia</li>
+            <li>Evita conflictos de nombres y cascada CSS</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>CSS Estándar vs Tailwind</h3>
+          <pre><code class="hljs html" data-trim>
+/* CSS tradicional */
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}</code></pre>
+          <pre><code class="hljs html" data-trim>
+<!-- Tailwind -->
+<div class="bg-white p-4 rounded shadow">Contenido</div>
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Instalación y Requerimientos</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>Vite, React, o cualquier build tool</li>
+            <li>tailwindcss, autoprefixer, postcss</li>
+          </ul>
+          <pre><code class="hljs bash" data-trim>
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Estructuración y Sintaxis</h3>
+          <ul>
+            <li>tailwind.config.js → configuración</li>
+            <li>
+              Estilos base:
+              <pre><code class="hljs css" data-trim>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+              </code></pre>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejemplo Práctico</h3>
+          <p>Formulario simple:</p>
+          <pre><code class="hljs html" data-trim>
+<form class="max-w-md mx-auto p-4 border rounded shadow">
+  <input class="block w-full mb-2 p-2 border" placeholder="Nombre" />
+  <button class="bg-blue-500 text-white px-4 py-2 rounded">Enviar</button>
+</form>
+          </code></pre>
+        </section>
+
+        <!-- Tema 2: Componentes -->
+        <section>
+          <h2>Tema 2: Patrones de Componentes</h2>
+        </section>
+
+        <section>
+          <h3>¿Qué son?</h3>
+          <p>
+            Son bloques reutilizables en React. Se comunican entre sí con props,
+            pueden anidar contenido con <code>children</code> y componer
+            estructuras.
+          </p>
+        </section>
+
+        <section>
+          <h3>Props, Children, Composición</h3>
+          <pre><code class="hljs jsx" data-trim>
+const Card = ({ title, children }) => (
+  <div className="p-4 border rounded">
+    <h3>{title}</h3>
+    <div>{children}</div>
+  </div>
+);
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Requisitos y Sintaxis</h3>
+          <ul>
+            <li>React instalado</li>
+            <li>Organizar componentes en carpetas</li>
+            <li>Usar funciones puras</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejercicio en vivo</h3>
+          <p>
+            Crea un componente <code>&lt;Button&gt;</code> reutilizable con
+            props para color y evento onClick. ¡Practiquemos!
+          </p>
+        </section>
+
+        <!-- Tema 3: Testing -->
+        <section>
+          <h2>Tema 3: Testing</h2>
+        </section>
+
+        <section>
+          <h3>¿Qué es el Testing?</h3>
+          <p>
+            Proceso para asegurar que los componentes funcionen correctamente.
+            Evita errores en producción.
+          </p>
+        </section>
+
+        <section>
+          <h3>Instalación y Herramientas</h3>
+          <pre><code class="hljs bash" data-trim>
+npm install -D vitest @testing-library/react @testing-library/user-event
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Tipos de Pruebas</h3>
+          <ul>
+            <li>Unitarias</li>
+            <li>Integración</li>
+            <li>E2E (End-to-End)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejemplo: Testing con React</h3>
+          <pre><code class="hljs js" data-trim>
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Button from './Button';
+
+test('click button', async () => {
+  const onClick = vi.fn();
+  render(<Button onClick={onClick}>Click me</Button>);
+  await userEvent.click(screen.getByText('Click me'));
+  expect(onClick).toHaveBeenCalled();
+});
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Cobertura de Tests</h3>
+          <p>¿Qué tanto del código ha sido probado?</p>
+          <pre><code class="hljs bash" data-trim>
+npx vitest --coverage
+          </code></pre>
+          <p>Resultados: statements, branches, functions, lines</p>
+        </section>
+
+        <!-- Slide final -->
+        <section>
+          <h2>¡Gracias!</h2>
+          <p>Dudas, comentarios y ejercicios ahora 📣</p>
+        </section>
+
+        <!-- Slide final con llamada a acción -->
+        <section>
+          <h2>Interactuemos 🧠</h2>
+          <p>💡 ¿Qué aprendiste hoy?</p>
+          <ul>
+            <li>Escribe en una nota o comenta con tu compañero</li>
+            <li>Responde en el chat o en voz alta</li>
+            <li>Elige tu parte favorita y cuéntanos por qué</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+      });
+    </script>
+  </body>
+</html>

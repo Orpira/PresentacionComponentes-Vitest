@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Librería de Componentes con React + Tailwind + Vitest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./dist/reveal.css";
+    />
+    <link
+      rel="stylesheet"
+      href="./dist/theme/league.css"
+      id="theme"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- PORTADA -->
+        <section>
+          <div style="text-align: center;">
+            <h1>Componentes + Vitest </h1>
+            <h3>React + Tailwind CSS + Vitest</h3>
+            <div style="margin-top: 40px">
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">Patrones de Componentes</span>
+              <span class="tech-badge">Testing-Library</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- INTRODUCCIÓN A TAILWIND CSS -->
+        <section>
+          
+            <div style="text-align: justify;">
+            <h2 style="color:rgb(31, 6, 71)">Tailwind CSS</h2>
+            <h6>
+              Framework CSS
+            <span class="tooltip" tabindex="0">
+              utility-first
+              <span class="tooltiptext">
+                 Se basa en "utilidades" pequeñas y específicas, como: <br/>
+                 text-center → centra el texto. <br/>
+                 bg-red-500 → fondo rojo (tono 500). <br/>
+                 p-4 → padding de 1rem. <br/>
+                 flex → aplica display: flex. <br/>
+                 rounded-lg → bordes redondeados grandes.
+              </span>
+            </span>
+            para diseñar interfaces rápidamente. En lugar de escribir CSS personalizado para estilizar
+            un componente, con Tailwind aplicas directamente estas clases de utilidad en tu HTML. 
+             
+            </h6>
+
+            <div class="two-columns">
+              <div>
+                <h5 style="color:blue">Ventajas:</h5>
+                <ul>
+                  <li class="fragment">
+                    Sin cambio de contexto entre HTML y CSS
+                  </li>
+                  <li class="fragment">Diseño responsive integrado</li>
+                  <li class="fragment">
+                    Personalización con <code>tailwind.config.js</code>
+                  </li>
+                </ul>
+              </div>
+              <div>                
+                <h5>Ejemplo:</h5>
+                <img height="50px" src="tailwind.png" data-preview-image>
+              </div>
+            </div>
+            </div>
+          </section>
+
+          <section>
+            <h3>Tailwind en Componentes React</h3>
+            <pre><code class="language-jsx">const Alert = ({ variant = 'info', children }) => {
+  const variants = {
+    info: 'bg-blue-100 text-blue-800',
+    success: 'bg-green-100 text-green-800',
+    error: 'bg-red-100 text-red-800'
+  };
+
+  return (
+    <div className={`${variants[variant]} p-4 rounded-lg`}>
+      {children}
+    </div>
+  );
+};</code></pre>
+            <p class="fragment">Combina con props para componentes dinámicos</p>
+          </section>
+        </section>
+
+        <!-- PATRONES DE COMPONENTES -->
+        <section>
+          <section>
+            <h2>Patrones de Componentes</h2>
+            <p>Estructuras reutilizables para composición</p>
+          </section>
+
+          <section>
+            <div class="concept-card">
+              <h3>Props: Interface del Componente</h3>
+              <pre><code class="language-jsx">interface ButtonProps {
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  onClick?: () => void;
+  children: React.ReactNode;
+}</code></pre>
+              <p class="fragment">Define el contrato de uso del componente</p>
+            </div>
+          </section>
+
+          <section>
+            <div class="concept-card">
+              <p>Children: Composición Flexible</p>
+              <pre><code class="language-jsx">const Card = ({ title, children }) => (
+  &lt;div className="border rounded-lg"&gt;
+    {title && &lt;h3 className="text-xl"&gt;{title}&lt;/h3&gt;}
+    &lt;div className="content"&gt;{children}&lt;/div&gt;
+  &lt;/div&gt;
+);</code></pre>
+              <p class="fragment">Permite anidar cualquier contenido</p>
+            </div>
+          </section>
+
+          <section>
+            <div class="concept-card">
+              <h3>Composición: Componentes Especializados</h3>
+              <pre><code class="language-jsx">const Page = () => (
+  &lt;Layout&gt;
+    &lt;Header /&gt;
+    &lt;Sidebar&gt;
+      &lt;NavMenu /&gt;
+    &lt;/Sidebar&gt;
+    &lt;MainContent&gt;
+      &lt;Dashboard /&gt;
+    &lt;/MainContent&gt;
+  &lt;/Layout&gt;
+);</code></pre>
+              <p class="fragment">Ensambla interfaces complejas</p>
+            </div>
+          </section>
+        </section>
+
+        <!-- TESTING -->
+        <section>
+          <section>
+            <h2>Testing de Componentes</h2>
+            <p>Vitest + Testing Library</p>
+            <ul>
+              <li class="fragment">Rápido (compatible con Vite)</li>
+              <li class="fragment">API similar a Jest</li>
+              <li class="fragment">Mocks nativos con <code>vi.fn()</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Pruebas de Renderizado</h3>
+            <pre><code class="language-js">import { render, screen } from '@testing-library/react';
+import Button from './Button';
+
+test('renderiza el texto del botón', () => {
+  render(&lt;Button&gt;Click&lt;/Button&gt;);
+  expect(screen.getByText('Click')).toBeInTheDocument();
+});</code></pre>
+          </section>
+
+          <section>
+            <h3>Pruebas de Interacción</h3>
+            <pre><code class="language-js">import userEvent from '@testing-library/user-event';
+
+test('maneja clicks', async () => {
+  const handleClick = vi.fn();
+  render(&lt;Button onClick={handleClick}&gt;OK&lt;/Button&gt;);
+  
+  await userEvent.click(screen.getByText('OK'));
+  expect(handleClick).toHaveBeenCalledTimes(1);
+});</code></pre>
+            <p class="fragment">Simula interacciones reales del usuario</p>
+          </section>
+
+          <section>
+            <h3>Cobertura de Tests</h3>
+            <ul>
+              <li class="fragment">
+                Mínimo <strong>70%</strong> por componente
+              </li>
+              <li class="fragment">
+                Casos principales:
+                <ul>
+                  <li>Renderizado básico</li>
+                  <li>Comportamiento con props</li>
+                  <li>Interacciones de usuario</li>
+                  <li>Estados condicionales</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- LIBRERÍA DE COMPONENTES (CONTENIDO EXISTENTE) -->
+        <section>
+          <h2>Nuestra Librería de Componentes</h2>
+          <p>4 componentes reutilizables con 70%+ cobertura</p>
+          <ul>
+            <li class="fragment">
+              <strong>Button</strong>: Variantes, tamaños, estados
+            </li>
+            <li class="fragment">
+              <strong>Card</strong>: Composición con slots
+            </li>
+            <li class="fragment">
+              <strong>Modal</strong>: Accesible, manejo de foco
+            </li>
+            <li class="fragment"><strong>Alert</strong>: Tipos contextuales</li>
+          </ul>
+        </section>
+
+         <!-- SECCIÓN BUTTON -->
+      <section>
+        <section>
+          <h2>1. Componente Button</h2>
+          <p>Implementación básica con Tailwind</p>
+          <pre><code class="language-jsx">const Button = ({ 
+  children, 
+  onClick, 
+  variant = 'primary' 
+}) => {
+  const variants = {
+    primary: 'bg-blue-500 hover:bg-blue-600',
+    danger: 'bg-red-500 hover:bg-red-600',
+    ghost: 'bg-transparent border border-gray-300'
+  };
+  
+  return (
+    <button
+      onClick={onClick}
+      className={`${variants[variant]} text-white 
+                 py-2 px-4 rounded transition-colors`}
+    >
+      {children}
+    </button>
+  );
+};</code></pre>
+        </section>
+
+        <section>
+          <h3>Tests para Button</h3>
+          <p class="test-stats">Cobertura: <span class="coverage-badge">78%</span></p>
+          <pre><code class="language-js">import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Button from './Button';
+
+describe('Button Component', () => {
+  test('renderiza con children', () => {
+    render(<Button>Hola</Button>);
+    expect(screen.getByText('Hola')).toBeInTheDocument();
+  });
+
+  test('llama onClick al hacer click', async () => {
+    const handleClick = vi.fn();
+    render(<Button onClick={handleClick}>Click</Button>);
+    await userEvent.click(screen.getByText('Click'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  test('aplica variant danger', () => {
+    const { container } = render(<Button variant="danger">Delete</Button>);
+    expect(container.firstChild).toHaveClass('bg-red-500');
+  });
+});</code></pre>
+        </section>
+      </section>
+
+      <!-- SECCIÓN CARD -->
+      <section>
+        <section>
+          <h2>2. Componente Card</h2>
+          <p>Composición con children y slots</p>
+          <pre><code class="language-jsx">const Card = ({ 
+  title,
+  footer,
+  children 
+}) => (
+  <div className="border rounded-lg overflow-hidden shadow-sm">
+    {title && (
+      <div className="border-b p-4 bg-gray-50">
+        <h3 className="font-semibold">{title}</h3>
+      </div>
+    )}
+    
+    <div className="p-4">{children}</div>
+    
+    {footer && (
+      <div className="border-t p-4 bg-gray-50">{footer}</div>
+    )}
+  </div>
+);</code></pre>
+        </section>
+
+        <section>
+          <h3>Tests para Card</h3>
+          <p class="test-stats">Cobertura: <span class="coverage-badge">72%</span></p>
+          <pre><code class="language-js">describe('Card Component', () => {
+  test('renderiza title y children', () => {
+    render(
+      <Card title="Título">
+        <p>Contenido</p>
+      </Card>
+    );
+    
+    expect(screen.getByText('Título')).toBeInTheDocument();
+    expect(screen.getByText('Contenido')).toBeInTheDocument();
+  });
+
+  test('no renderiza header sin title', () => {
+    const { container } = render(<Card>Contenido</Card>);
+    expect(container.querySelector('header')).toBeNull();
+  });
+
+  test('renderiza footer cuando se provee', () => {
+    render(<Card footer={<button>Acción</button>} />);
+    expect(screen.getByText('Acción')).toBeInTheDocument();
+  });
+});</code></pre>
+        </section>
+      </section>
+
+      <!-- SECCIÓN MODAL -->
+      <section>
+        <section>
+          <h2>3. Componente Modal</h2>
+          <p>Componente accesible con portal</p>
+          <pre><code class="language-jsx">const Modal = ({ 
+  isOpen, 
+  onClose, 
+  title, 
+  children 
+}) => {
+  if (!isOpen) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+        <div className="flex justify-between items-center p-4 border-b">
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <button 
+            onClick={onClose}
+            aria-label="Close modal"
+            className="text-gray-500 hover:text-gray-700"
+          >
+            &times;
+          </button>
+        </div>
+        <div className="p-4">{children}</div>
+      </div>
+    </div>,
+    document.body
+  );
+};</code></pre>
+        </section>
+<section>
+          <h3>Tests para Modal</h3>
+          <p class="test-stats">Cobertura: <span class="coverage-badge">75%</span></p>
+          <pre><code class="language-js">describe('Modal Component', () => {
+  test('no se renderiza cuando isOpen=false', () => {
+    render(<Modal isOpen={false} />);
+    expect(screen.queryByRole('dialog')).toBeNull();
+  });
+
+  test('se renderiza con título y contenido', () => {
+    render(
+      <Modal isOpen={true} title="Confirmar">
+        <p>¿Estás seguro?</p>
+      </Modal>
+    );
+    
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(screen.getByText('Confirmar')).toBeInTheDocument();
+    expect(screen.getByText('¿Estás seguro?')).toBeInTheDocument();
+  });
+
+  test('llama onClose al hacer click en botón', async () => {
+    const handleClose = vi.fn();
+    render(<Modal isOpen={true} onClose={handleClose} />);
+    await userEvent.click(screen.getByLabelText('Close modal'));
+    expect(handleClose).toHaveBeenCalledTimes(1);
+  });
+});</code></pre>
+        </section>
+      </section>
+
+      <!-- SECCIÓN TESTING -->
+      <section>
+        <h2>Estrategia de Testing</h2>
+        <ul>
+          <li class="fragment">
+            <strong>Cobertura mínima del 70%</strong> por componente
+            <ul>
+              <li>Renderizado básico</li>
+              <li>Comportamiento interactivo</li>
+              <li>Casos edge</li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <strong>Vitest + Testing Library</strong>
+            <ul>
+              <li>Tests unitarios y de integración</li>
+              <li>Simulación de interacción real con user-event</li>
+              <li>Validación de accesibilidad</li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <strong>CI/CD Integration</strong>
+            <ul>
+              <li>Chequeo de cobertura en cada PR</li>
+              <li>Tests en paralelo</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Resultados Finales</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Líneas</th>
+              <th>Tests</th>
+              <th>Cobertura</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Button</td>
+              <td>15</td>
+              <td>5</td>
+              <td>78%</td>
+            </tr>
+            <tr>
+              <td>Card</td>
+              <td>20</td>
+              <td>4</td>
+              <td>72%</td>
+            </tr>
+            <tr>
+              <td>Modal</td>
+              <td>25</td>
+              <td>6</td>
+              <td>75%</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="fragment">Promedio: <strong>75% de cobertura</strong></p>
+      </section>
+
+    </div>
+  </div>
+     <script src="./dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      previewLinks: false,
+      slideNumber: true,
+      transition: 'convex',
+      backgroundTransition: 'slide',
+      plugins: []
+    });
+  </script>
+</body>
+</html>

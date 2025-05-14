@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Frontend Bootcamp - Presentación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/reveal.css" ; />
+    <link rel="stylesheet" href="./dist/theme/league.css" id="theme" />
+    <link rel="stylesheet" href="./plugin/highlight/monokai.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Título -->
+
+        <section>
+          <div style="text-align: center">
+            <h1>Componentes + Vitest</h1>
+            <h3>React + Tailwind CSS + Vitest</h3>
+            <div style="margin-top: 40px">
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">Patrones de Componentes</span>
+              <span class="tech-badge">Testing-Library</span>
+            </div>
+          </div>
+        </section>
+
+        <section data-background="#1a1a2e" data-transition="zoom">
+          <!-- Fondo oscuro elegante + transición de zoom -->
+          <div
+            style="text-align: center; font-family: 'Montserrat', sans-serif"
+          >
+            <!-- Logo de React -->
+            <div style="margin-bottom: 20px">
+              <img src="react.png" width="100" />
+            </div>
+
+            <!-- Título con gradiente -->
+            <h2
+              style="
+                font-size: 4.5rem;
+                margin-bottom: 0;
+                background: linear-gradient(45deg, #61dafb, #cbddf3);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+                text-transform: uppercase;
+              "
+            >
+              LEIDY & COMPANY
+            </h2>
+
+            <!-- Línea divisora decorativa -->
+            <hr
+              style="
+                width: 150px;
+                border: 0;
+                height: 2px;
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  #61dafb,
+                  transparent
+                );
+                margin: 20px auto;
+              "
+            />
+
+            <!-- Subtítulo -->
+            <p
+              style="
+                color: #b8b8b8;
+                letter-spacing: 3px;
+                font-size: 1rem;
+                margin-bottom: 40px;
+              "
+            >
+              PRESENTADO POR
+            </p>
+
+            <!-- Lista de nombres con animación -->
+            <div
+              style="
+                display: inline-block;
+                text-align: left;
+                background: rgba(15, 52, 96, 0.3);
+                padding: 25px 40px;
+                border-radius: 15px;
+                backdrop-filter: blur(5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+              "
+            >
+              <div
+                class="team-member"
+                style="display: flex; align-items: center; margin: 15px 0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  style="fill: #61dafb; margin-right: 15px"
+                >
+                  <path d="M12 2L4 12l8 10 8-10z" />
+                </svg>
+                <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">
+                  Leire
+                </p>
+              </div>
+              <div
+                class="team-member"
+                style="display: flex; align-items: center; margin: 15px 0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  style="fill: #61dafb; margin-right: 15px"
+                >
+                  <path d="M12 2L4 12l8 10 8-10z" />
+                </svg>
+                <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">Ion</p>
+              </div>
+              <div
+                class="team-member"
+                style="display: flex; align-items: center; margin: 15px 0"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  style="fill: #61dafb; margin-right: 15px"
+                >
+                  <path d="M12 2L4 12l8 10 8-10z" />
+                </svg>
+                <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">
+                  Orlando
+                </p>
+              </div>
+            </div>
+
+            <!-- Pie de página -->
+            <p
+              style="
+                position: absolute;
+                bottom: 20px;
+                right: 30px;
+                color: #555;
+                font-size: 0.8rem;
+              "
+            >
+              Powered by <span style="color: #61dafb">Leidy & Company</span> ·
+              2025
+            </p>
+          </div>
+        </section>
+
+        <style>
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+
+          /* Animación para los nombres */
+          .team-member {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease-out;
+          }
+          section.present .team-member {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          section.present .team-member:nth-child(1) {
+            transition-delay: 0.2s;
+          }
+          section.present .team-member:nth-child(2) {
+            transition-delay: 0.4s;
+          }
+          section.present .team-member:nth-child(3) {
+            transition-delay: 0.6s;
+          }
+        </style>
+
+        <!-- Tema 1: Tailwind CSS -->
+
+        <section data-transition="concave" data-background-transition="slide">
+          <div style="text-align: justify"></div>
+          <h1 style="color: rgb(247, 245, 250); text-align: center">
+            Tailwind CSS
+          </h1>
+          <p style="text-align: justify">
+            Tailwind CSS es un framework de utilidades para CSS que permite
+            crear interfaces de usuario rápidas y consistentes sin necesidad de
+            escribir CSS personalizado.
+          </p>
+        </section>
+
+        <section data-transition="concave" data-background-transition="slide">
+          <h2 style="text-align: center">¿Para qué sirve?</h2>
+          <ul>
+            <li>Estilizar interfaces rápidamente</li>
+            <li>Mantener consistencia</li>
+            <li>Evitar conflictos de nombres y cascada CSS</li>
+            <li>Permitir diseño responsivo y adaptativo</li>
+            <li>Fomentar la reutilización de estilos</li>
+            <li>Mejorar la productividad del desarrollador</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="text-align: center" data-transition="zoom" data-background-transition="convex">
+            CSS tradicional vs Tailwind
+          </h2>
+          <pre><code class="hljs language-css" data-trim>
+/* CSS tradicional */
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}</code></pre>
+          <pre><code class="hljs language-html" data-trim>
+<!-- HTML -->
+<div class="card">Contenido</div>
+          </code></pre>
+          <pre><code class="hljs language-html" data-trim>
+<!-- Tailwind -->
+<div class="bg-white p-4 rounded shadow">Contenido</div>
+          </code></pre>
+        </section>
+
+        <!-- Grupo principal de slides verticales -->
+        <section>
+          <!-- Slide padre (primera pantalla) -->
+          <section>
+            <h2 style="text-align: center">Proceso de instalación</h2>
+            <p style="text-align: justify">
+              Para usar Tailwind en un proyecto, lo ideal es integrarlo con
+              herramientas como Vite, Webpack o frameworks como React, Vue o
+              Next.js.
+            </p>
+            <p style="text-align: justify">
+              A continuación, se muestra un ejemplo de instalación y
+              configuración básica.
+            </p>
+          </section>
+
+          <!-- Slide hija (segunda pantalla - se desplaza hacia abajo) -->
+          <section>
+            <h2 style="text-align: center; color: #fdfcfc">Requisitos:</h2>
+            <p style="text-align: justify">
+              Asegúrate de tener Node.js y un gestor de paquetes como npm o yarn
+              instalados.
+            </p>
+            <div class="concept-card">
+              <h3 style="text-align: center; color: #013341">
+                Instalación de Tailwind CSS:
+              </h3>
+              <p style="text-align: justify; color: black ; font-size: 2rem">
+                Ejecuta los siguientes comandos en la terminal de tu proyecto:
+              </p>
+              <pre><code class="language-bash">
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init -p
+        </code></pre>
+              <p style="text-align: left; color: black ; font-size: 2rem">
+                Esto crea los archivos de configuración:
+                <strong>tailwind.config.js</strong> y
+                <strong>postcss.config.js</strong>.
+              </p>
+            </div>
+          </section>
+
+          <!-- Slide hija adicional (opcional) -->
+          <section>
+            <div class="concept-card">
+              <h3 style="text-align: center; color: #013341">
+                Configuración Base: tailwind.config.js
+              </h3>
+              <pre><code class="language-js">
+  // tailwind.config.js
+  /** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+        </code></pre>
+              <span style="text-align: center; color: black; font-size: 1.6rem">
+                Archivo de configuración principal de Tailwind CSS. Define cómo
+                personalizar Tailwind en un proyecto. 
+                <span class="tooltip" tabindex="0">Contenido.
+                  <span class="tooltiptext">                    
+                    <strong style="color: rgb(83, 252, 5);">content:</strong> Indica dónde buscar clases de Tailwind para generar el CSS final. 
+                    Si no se indica bien, ¡no se aplicarán estilos!</br>                
+                    <strong style="color: rgb(83, 252, 5);">theme:</strong> Permite personalizar el tema de Tailwind, como colores y fuentes.</br>
+                    <strong style="color: rgb(83, 252, 5);">plugins:</strong> Para añadir funcionalidades extra como formularios o tipografías.
+                  </span>
+                </span>
+              </span>
+            
+              <p style="text-align: left; color: black; font-size: 1.6rem">
+                Archivo generado automáticamente con
+                <code><strong> tailwindcss init -p</strong></code>
+              </p>
+            </div>
+          </section>
+          <section>
+            <div class="concept-card">
+              <h2 style="text-align: center; color: #031e69">
+                Qué Hace?
+              </h2>
+              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+                Personaliza Tailwind (colores, fuentes, etc).
+               <h2 style="text-align: center; color: #031e69">
+                Por qué es importante?
+              </h2>
+              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+                Define qué clases incluir y cómo se ve el diseño.            
+
+          </section>
+          <section>
+            <div class="concept-card">
+              <h3 style="text-align: center; color: #013341">
+                Configuración necesaria: postcss.config.js
+              </h3>
+              <pre><code class="language-js">
+  // postcss.config.js
+  module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+        </code></pre>
+              <span style="text-align: center; color: black; font-size: 1.6rem">
+                Es el archivo que configura PostCSS, una herramienta que transforma el CSS con plugins. Tailwind usa esto para procesar su CSS. 
+                <span class="tooltip" tabindex="0">Contenido.
+                  <span class="tooltiptext">                    
+                    <strong style="color: rgb(83, 252, 5);">tailwindcss:</strong> Aplica la lógica de Tailwind para generar utilidades.</br>                
+                    <strong style="color: rgb(83, 252, 5);">autoprefixer:</strong> Añade automáticamente los prefijos necesarios</br>  
+                    para compatibilidad con distintos navegadores </br> 
+                    (como -webkit-, -moz-, etc).</br>
+                  </span>
+                </span>
+              </span>
+            
+              <p style="text-align: left; color: black; font-size: 1.5rem">
+                Archivo generado automáticamente con
+                <code><strong> tailwindcss init -p</strong></code></br>
+                <strong>-p</strong> significa que incluye también la configuración de PostCSS 
+                además de la de Tailwind. Es un atajo que hace dos cosas al mismo tiempo:</br>
+                1. Crea el archivo tailwind.config.js con una configuración base.</br>
+                2. Crea el archivo postcss.config.js con la configuración necesaria para usar Tailwind como plugin de PostCSS.
+              </p>
+            </div>
+          </section>
+          <section>
+            <div class="concept-card">
+              <h2 style="text-align: center; color: #031e69">
+                Qué Hace?
+              </h2>
+              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+                Usa Tailwind como plugin de PostCSS + autoprefixer
+               <h2 style="text-align: center; color: #031e69">
+                Por qué es importante?
+              </h2>
+              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+                Hace que el CSS funcione bien en todos los navegadores.            
+
+          </section>
+        </section>  
+
+
+        <section>
+         <h2 style="text-align: center"> Estructuración</h2>
+          <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
+            En un proyecto típico con Tailwind, la estructura suele ser:
+          </p>
+          <pre><code class="hljs language-bash" data-trim>
+/src
+  └── index.css  ← Aquí las directivas de Tailwind
+  └── App.jsx    ← Componentes (React, por ejemplo)
+tailwind.config.js
+          </code></pre>
+          <h3 style="text-align: center">Archivo CSS base:</h3>
+          <pre><code class="hljs language-css" data-trim>   
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+          </code></pre>
+        </section>  
+
+        <section>
+          <h1 style="text-align: center">Sintaxis</h1>
+            <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
+                Tailwind utiliza clases semánticas y de propósito único. Cada clase representa una única propiedad de estilo.
+            </p>   
+            <pre><code class="hljs language-html"; style="color: rgb(9, 225, 233); text-align: center;" data-trim> 
+                        | Propiedad             | Clase de Tailwind       |
+                        | ----------------------|------------------------ |
+                        | Color de fondo blanco | `bg-white`              |
+                        | Padding de 1 rem      | `p-4`                   |
+                        | Borde redondeado      | `rounded`               |
+                        | Sombra leve           | `shadow`                |
+                        | Texto centrado        | `text-center`           |
+                        | Color de texto azul   | `text-blue-500`         |
+                        | Margen superior 2 rem | `mt-8`                  |
+                        | Ancho completo        | `w-full`                |
+                        | Altura 100px          | `h-24`                  |
+         </code></pre>
+         <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
+        Puedes combinarlas directamente en el className del HTML.
+        </p>       
+        </section>  
+          
+
+        <section>
+          <h1 style="text-align: center;"> Ejemplo Práctico</h1>        
+          <pre><code class="hljs language-html" data-trim>
+<form class="max-w-md mx-auto p-4 border rounded shadow space-y-4">
+  <input
+    type="text"
+    placeholder="Nombre"
+    class="block w-full border border-gray-300 p-2 rounded"/>
+  <button
+    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+    Enviar
+  </button>
+</form>
+          </code></pre>
+            <div class="two-columns">
+              <div>
+                <h5 style="color:rgb(255, 230, 0); text-align: center;">Ventajas:</h5>
+                  <ul>
+                    <li style="font-size: 1.5rem;">Rápido y fácil de usar.</li>
+                    <li style="font-size: 1.5rem;">Visualmente atractivo sin escribir CSS extra.</li>
+                    <li style="font-size: 1.5rem;">Responsivo y modificable rápidamente desde HTML.</li>
+                    <li style="font-size: 1.5rem;">Ideal para prototipado y desarrollo ágil.</li>
+                  </ul>
+              </div>
+              <div>
+                <h5 style="color:rgb(255, 230, 0); text-align: center;">Desventajas:</h5>
+                  <ul>
+                    <li style="font-size: 1.5rem;">Puede volverse desordenado con muchas clases.</li>
+                    <li style="font-size: 1.5rem;">Requiere tiempo para aprender la sintaxis.</li>
+                    <li style="font-size: 1.5rem;">Puede aumentar el tamaño del archivo CSS si no se configura correctamente.</li>
+                  </ul>
+              </div>
+            </div>
+        </section>
+
+        <!-- Tema 2: Componentes -->
+        <section>
+          <h1 style="text-align: center;">Patrones de Componentes</h1>
+        </section>
+
+        <section>
+          <h3>¿Qué son?</h3>
+          <p>
+            Son bloques reutilizables en React. Se comunican entre sí con props,
+            pueden anidar contenido con <code>children</code> y componer
+            estructuras.
+          </p>
+        </section>
+
+        <section>
+          <h3>Props, Children, Composición</h3>
+          <pre><code class="hljs language-jsx" data-trim>
+const Card = ({ title, children }) => (
+  <div className="p-4 border rounded">
+    <h3>{title}</h3>
+    <div>{children}</div>
+  </div>
+);
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Requisitos y Sintaxis</h3>
+          <ul>
+            <li>React instalado</li>
+            <li>Organizar componentes en carpetas</li>
+            <li>Usar funciones puras</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejercicio en vivo</h3>
+          <p>
+            Crea un componente <code>&lt;Button&gt;</code> reutilizable con
+            props para color y evento onClick. ¡Practiquemos!
+          </p>
+        </section>
+
+        <!-- Tema 3: Testing -->
+        <section>
+          <h2>Tema 3: Testing</h2>
+        </section>
+
+        <section>
+          <h3>¿Qué es el Testing?</h3>
+          <p>
+            Proceso para asegurar que los componentes funcionen correctamente.
+            Evita errores en producción.
+          </p>
+        </section>
+
+        <section>
+          <h3>Instalación y Herramientas</h3>
+          <pre><code class="hljs language-bash" data-trim>
+npm install -D vitest @testing-library/react @testing-library/user-event
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Tipos de Pruebas</h3>
+          <ul>
+            <li>Unitarias</li>
+            <li>Integración</li>
+            <li>E2E (End-to-End)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Ejemplo: Testing con React</h3>
+          <pre><code class="hljs language-js" data-trim>
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import Button from './Button';
+
+test('click button', async () => {
+  const onClick = vi.fn();
+  render(<Button onClick={onClick}>Click me</Button>);
+  await userEvent.click(screen.getByText('Click me'));
+  expect(onClick).toHaveBeenCalled();
+});
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Cobertura de Tests</h3>
+          <p>¿Qué tanto del código ha sido probado?</p>
+          <pre><code class="hljs language-bash" data-trim>
+npx vitest --coverage
+          </code></pre>
+          <p>Resultados: statements, branches, functions, lines</p>
+        </section>
+
+        <section>
+          <h2>¡Gracias!</h2>
+          <p>Dudas, comentarios y ejercicios ahora 📣</p>
+        </section>
+      </div>
+    </div>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./dist/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        previewLinks: false,
+        slideNumber: true,
+        transition: "convex",
+        backgroundTransition: "slide",
+        plugins: [RevealHighlight],
+      });
+    </script>
+  </body>
+</html>
