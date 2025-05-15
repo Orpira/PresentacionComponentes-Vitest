@@ -13,6 +13,121 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+    .car-analogy {
+      height: 400px;
+      position: relative;
+      margin: 0 auto;
+      width: 80%;
+    }
+    
+    .car-component {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.5) translateY(50px);
+      transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      width: 240px;
+      z-index: 1;
+    }
+    
+    .car-component img {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    
+    .car-component:hover img {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    
+    .component-info {
+      text-align: left;
+    }
+    
+    .component-name {
+      font-weight: 600;
+      margin: 0;
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+    
+    .component-code {
+      font-family: 'Courier New', monospace;
+      background: #f1f3f5;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #d6336c;
+      font-size: 0.85em;
+      margin: 5px 0 0 0;
+      display: inline-block;
+    }
+    
+    .car-component.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    
+    /* Posiciones específicas */
+    #steering-wheel { top: 10%; left: 5%; }
+    #wheels { bottom: 15%; left: 20%; }
+    #seats { top: 30%; right: 15%; }
+    #engine { bottom: 45%; right: 10%; }
+    #full-car { 
+      top: 40%; 
+      left: 50%; 
+      transform: translate(-50%, -50%) scale(0); 
+      width: 180px;
+      text-align: center;
+      flex-direction: column;
+      padding: 25px;
+    }
+    
+    #full-car.visible { 
+      transform: translate(-50%, -50%) scale(1); 
+    }
+    
+    #full-car img {
+      width: 100px;
+      height: auto;
+      margin: 0 0 15px 0;
+    }
+    
+    .assembly-line {
+      position: absolute;
+      height: 4px;
+      background: #e9ecef;
+      width: 80%;
+      top: 50%;
+      left: 10%;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    
+    .assembly-line.visible {
+      opacity: 1;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    #full-car.visible img {
+      animation: float 3s ease-in-out infinite;
+    }
+    </style>
+    <script src="./dist/reveal.js"></script>
   </head>
   <body>
     <div class="reveal">
@@ -25,7 +140,7 @@
             <h3>React + Tailwind CSS + Vitest</h3>
             <div style="margin-top: 40px">
               <span class="tech-badge"><a href="#/tailwind-section">Tailwind CSS</a></span>
-              <span class="tech-badge">Patrones de Componentes</span>
+              <span class="tech-badge"><a href="#/patrones-section">Patrones de Componentes</a></span>
               <span class="tech-badge">Testing-Library</span>
             </div>
           </div>
@@ -267,7 +382,7 @@
                 Instalación de Tailwind CSS:
               </h3>
               <p style="text-align: justify; color: black ; font-size: 2rem">
-                Ejecuta los siguientes comandos en la terminal de tu proyecto:
+                Ejecutar las siguientes instrucciones en la terminal de tu proyecto:
               </p>
               <pre><code class="language-bash">
   npm install -D tailwindcss postcss autoprefixer
@@ -468,48 +583,232 @@ tailwind.config.js
         </section>
 
         <!-- Tema 2: Componentes -->
-        <section>
-          <h1 style="text-align: center;">Patrones de Componentes</h1>
+        <section id="patrones-section" data-transition="concave" data-background-transition="slide">
+          <h1  style="text-align: center;">Patrones de Componentes</h1>
+          <h2 style="text-align: center;">Props + Children + Composición</h2>
         </section>
 
         <section>
-          <h3>¿Qué son?</h3>
-          <p>
-            Son bloques reutilizables en React. Se comunican entre sí con props,
-            pueden anidar contenido con <code>children</code> y componer
-            estructuras.
+          <h1 style="text-align: center;">¿Qué son?</h1>
+          <p class="fragment" style="text-align: justify; font-size: 2rem;">
+            Los componentes son las partes principales y reutilizables que forman una aplicación web hecha con React. </p>
+          <p class="fragment" style="text-align: justify; font-size: 2rem;">
+            Los patrones de componentes como 
+            <span class="tooltip" tabindex="0">
+              props, children y composición
+              <span class="tooltiptext" style="font-size: 1.8rem" >
+                <b style="color: #fbfd8c; font-size: 1.8rem">props:</b> permiten pasar datos a un componente.  <br> 
+                <b style="color: #fbfd8c; font-size: 1.8rem">children:</b> permiten incluir contenido dinámico dentro del <br>  componente.<br>
+                <b style="color: #fbfd8c; font-size: 1.8rem">composición:</b> permite agrupar componentes para formar <br> estructuras más complejas </b>
+              </span>
+            </span>
+          </b> son las formas recomendadas de estructurar y reutilizar estas partes de forma clara, flexible y mantenible.</p>
+          </section>
+
+        
+        <!-- Slide 2: Componentes -->
+        <section>
+          <h2 style="margin-bottom: 50px;text-align: center;">Desarrollo Componentizado<br><small>Como construir un coche</small></h2>
+          <p style="text-align: justify; font-size: 1.4rem; color: rgb(226, 241, 5);">
+            <br>Cada parte es un componente: el volante, las ruedas, los asientos, el motor, etc.
+            <br>Cada parte tiene su propia función y puede ser ensamblada para formar el coche completo.
           </p>
+          <div class="car-analogy">
+            <div class="car-component" id="car-analogy">
+                <img src="https://cdn-icons-png.flaticon.com/512/3073/3073625.png" alt="Coche">
+                <div class="component-info">
+                  <p class="component-name">Coche</p>
+                  <p class="component-code">Car.jsx</p>
+                </div>
+            </div>
+            <!-- Línea de ensamblaje -->
+            <div class="assembly-line"></div>
+
+            <!-- Fragmentos para animar los componentes -->
+            <span class="fragment" data-component-index="0"></span>
+            <span class="fragment" data-component-index="1"></span>
+            <span class="fragment" data-component-index="2"></span>
+            <span class="fragment" data-component-index="3"></span>
+            <span class="fragment" data-component-index="4"></span>
+                        
+            <!-- Componentes reales de un coche -->
+            <div id="steering-wheel" class="car-component">
+              <img src="./examples/assets/steering-wheel_391252.png" alt="Volante">
+              <div class="component-info">
+                <p class="component-name">Volante</p>
+                <p class="component-code">ComponenteVolante.jsx</p>
+              </div>
+            </div>
+            
+            <div id="wheels" class="car-component">
+              <img src="./examples/assets/wheel_2137841.png" alt="Ruedas">
+              <div class="component-info">
+                <p class="component-name">Ruedas</p>
+                <p class="component-code">ComponenteRuedas.tsx</p>
+              </div>
+            </div>
+            
+            <div id="seats" class="car-component">
+              <img src="./examples/assets/car-chair_6332017.png" alt="Asientos">
+              <div class="component-info">
+                <p class="component-name">Asientos</p>
+                <p class="component-code">ComponenteAsientos.vue</p>
+              </div>
+            </div>
+            
+            <div id="engine" class="car-component">
+              <img src="./examples/assets/engine_10146173.png" alt="Motor">
+              <div class="component-info">
+                <p class="component-name">Motor</p>
+                <p class="component-code">ComponenteMotor.svelte</p>
+              </div>
+            </div>
+            
+            <!-- Coche completo -->
+            <div id="full-car" class="car-component">
+              <img src="./examples/assets/transport_14969814.png" alt="Coche completo">
+              <div class="component-info">
+                <p style="text-align: center;" class="component-name">Coche</p>
+                <p class="component-code">Coche.js</p>
+              </div>
+            </div>
+          </div>          
         </section>
 
         <section>
-          <h3>Props, Children, Composición</h3>
-          <pre><code class="hljs language-jsx" data-trim>
+          <h1 style="text-align: center;">¿Para qué sirven?</h1>
+          <ul>
+            <li>Organizar código en partes pequeñas.</li>
+            <li>Hacer que las aplicaciones sean más fáciles de mantener.</li>
+            <li>Construir interfaces dinámicas y reutilizables.</li>
+          </ul>
+        </section>       
+
+        <section>                 
+              <h1 style="text-align: center;">Sintaxis</h1>
+              <pre><code class="language-jsx">import React from 'react';
+
 const Card = ({ title, children }) => (
-  <div className="p-4 border rounded">
-    <h3>{title}</h3>
+  <div className="p-4 border rounded shadow">
+    <h2>{title}</h2>
     <div>{children}</div>
   </div>
 );
-          </code></pre>
+
+// Uso
+<Card title="Bienvenido">
+  <p>Contenido interno personalizado</p>
+</Card>
+
+</code></pre>            
         </section>
 
         <section>
-          <h3>Requisitos y Sintaxis</h3>
+          <h2 style="text-align: center;">Casos de uso comunes</h2>
           <ul>
-            <li>React instalado</li>
-            <li>Organizar componentes en carpetas</li>
-            <li>Usar funciones puras</li>
+            <li>Botones con comportamiento dinámico</li>
+            <li>Layouts: Header + Sidebar + Content</li>
+            <li>Formularios reutilizables</li>
+            <li>Modales, tooltips, dropdowns</li>
           </ul>
         </section>
 
         <section>
-          <h3>Ejercicio en vivo</h3>
-          <p>
-            Crea un componente <code>&lt;Button&gt;</code> reutilizable con
-            props para color y evento onClick. ¡Practiquemos!
-          </p>
+          <h2 style="text-align: center;">Comparación rápida</h2>
+
+          <style>
+            .concept-table {
+              width: 85%;
+              margin: 30px auto;
+              border-collapse: separate;
+              border-spacing: 0;
+              background: white;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+              opacity: 0;
+              transform: translateY(30px);
+              transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            
+            .concept-table.visible {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            
+            .concept-table th {
+              background: #013341;
+              color: white;
+              padding: 15px;
+              text-align: left;
+              font-weight: 600;
+            }
+            
+            .concept-table td {
+              padding: 15px;
+              border-bottom: 1px solid #e9ecef;
+              vertical-align: top;
+            }
+            
+            .concept-table tr:last-child td {
+              border-bottom: none;
+            }
+            
+            .concept-table tr:nth-child(even) {
+              background-color: #f8f9fa;
+            }
+            
+            .code-example {
+              font-family: 'Fira Code', monospace;
+              background: #f1f3f5;
+              padding: 8px 12px;
+              border-radius: 6px;
+              color: #d6336c;
+              font-size: 0.9em;
+              display: inline-block;
+              margin: 5px 0;
+              line-height: 1.4;
+            }
+          </style>
+
+
+        <table class="concept-table">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Qué es</th>
+              <th style="text-align: center;">Ejemplo de uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: #031e69; text-align: center;"><strong>props</strong></td>
+              <td  style="color: #031e69; text-align: left; font-size: 1.8rem";>Datos que mandas al componente</td>
+              <td><pre class="code-example">&lt;Boton texto="Enviar" color="rojo" /&gt;</pre></td>
+            </tr>
+            <tr>
+              <td style="color: #031e69; text-align: center;"><strong>children</strong></td>
+              <td style="color: #031e69; text-align: left; font-size: 1.8rem";>El contenido interno entre las etiquetas</td>
+              <td><pre class="code-example">&lt;Caja&gt;&lt;p&gt;Hola&lt;/p&gt;&lt;/Caja&gt;</pre></td>
+            </tr>
+          </tbody>
+        </table>
+        </section>        
+
+        <section>
+          <h3>Ejercicio práctico</h3>
+          <p>Crea un componente <code>Alert</code> que reciba:</p>
+          <ul>
+            <li>Una prop <code>type</code> ("success", "error", "info")</li>
+            <li>Children con el mensaje</li>
+          </ul>
+          <pre><code class="hljs jsx" data-trim>
+<Alert type="success">Guardado exitosamente</Alert>
+          </code></pre>
+          <p>🎯 Desafío: Usa className dinámico para cambiar color según el tipo</p>
         </section>
 
+        
         <!-- Tema 3: Testing -->
         <section>
           <h2>Tema 3: Testing</h2>
@@ -581,6 +880,64 @@ npx vitest --coverage
         backgroundTransition: "slide",
         plugins: [RevealHighlight],
       });
+    </script>
+
+    <script>
+        Reveal.addEventListener('ready', function() {
+          const sequence = [
+            { element: document.getElementById('steering-wheel'), line: false },
+            { element: document.getElementById('wheels'), line: false },
+            { element: document.getElementById('seats'), line: false },
+            { element: document.getElementById('engine'), line: true },
+            { element: document.getElementById('full-car'), line: true }
+          ];
+      
+        Reveal.addEventListener('fragmentshown', function(event) {
+          const index = event.fragment.dataset.componentIndex;
+          if (index >= 0 && sequence[index]) {
+            sequence[index].element.classList.add('visible');
+            if (sequence[index].line) {
+              document.querySelector('.assembly-line').classList.add('visible');
+            }
+          }
+        });
+    
+        Reveal.addEventListener('fragmenthidden', function(event) {
+          const index = event.fragment.dataset.componentIndex;
+          if (index >= 0 && sequence[index]) {
+            sequence[index].element.classList.remove('visible');
+            if (index === sequence.length - 1) {
+              document.querySelector('.assembly-line').classList.remove('visible');
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+    // Animación para la tabla
+    Reveal.addEventListener('slidechanged', function(event) {
+      const currentSlide = event.currentSlide;
+      const table = currentSlide.querySelector('.concept-table');
+      
+      if (table) {
+        setTimeout(() => {
+          table.classList.add('visible');
+        }, 300);
+      }
+    });
+    </script>
+    <script>
+      // Animación para los componentes
+      const components = document.querySelectorAll('.car-component');
+      components.forEach((component, index) => {
+        component.style.animationDelay = `${index * 0.2}s`;
+        component.classList.add('component-animation');
+      });
+    </script>
+    <script>
+      // Animación para la línea de ensamblaje
+      const assemblyLine = document.querySelector('.assembly-line');
+      assemblyLine.classList.add('car-assembly');
     </script>
   </body>
 </html>
