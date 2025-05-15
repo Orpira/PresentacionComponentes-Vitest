@@ -24,7 +24,7 @@
             <h1>Componentes + Vitest</h1>
             <h3>React + Tailwind CSS + Vitest</h3>
             <div style="margin-top: 40px">
-              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge"><a href="#/tailwind-section">Tailwind CSS</a></span>
               <span class="tech-badge">Patrones de Componentes</span>
               <span class="tech-badge">Testing-Library</span>
             </div>
@@ -193,7 +193,7 @@
 
         <!-- Tema 1: Tailwind CSS -->
 
-        <section data-transition="concave" data-background-transition="slide">
+        <section id="tailwind-section" data-transition="concave" data-background-transition="slide">
           <div style="text-align: justify"></div>
           <h1 style="color: rgb(247, 245, 250); text-align: center">
             Tailwind CSS
@@ -301,11 +301,14 @@ module.exports = {
   plugins: [],
 }
         </code></pre>
-              <span style="text-align: center; color: black; font-size: 1.6rem">
+              <span style="text-align: center; color: black; font-size: 1.3rem">
                 Archivo de configuración principal de Tailwind CSS. Define cómo
                 personalizar Tailwind en un proyecto. 
                 <span class="tooltip" tabindex="0">Contenido.
-                  <span class="tooltiptext">                    
+                  <span class="tooltiptext">  
+                    <strong style="color: rgb(83, 252, 5);">/** @type {import('tailwindcss').Config} */:</strong> Es una anotación JSDoc
+      que proporciona información de tipos a los editores de código, permitiendo
+      autocompletado inteligente y verificación de tipos para la configuración de Tailwind.</br>                 
                     <strong style="color: rgb(83, 252, 5);">content:</strong> Indica dónde buscar clases de Tailwind para generar el CSS final. 
                     Si no se indica bien, ¡no se aplicarán estilos!</br>                
                     <strong style="color: rgb(83, 252, 5);">theme:</strong> Permite personalizar el tema de Tailwind, como colores y fuentes.</br>
@@ -314,7 +317,7 @@ module.exports = {
                 </span>
               </span>
             
-              <p style="text-align: left; color: black; font-size: 1.6rem">
+              <p style="text-align: left; color: black; font-size: 1.3rem">
                 Archivo generado automáticamente con
                 <code><strong> tailwindcss init -p</strong></code>
               </p>
@@ -348,23 +351,22 @@ module.exports = {
   },
 }
         </code></pre>
-              <span style="text-align: center; color: black; font-size: 1.6rem">
+              <span style="text-align: center; color: black; font-size: 1.4rem">
                 Es el archivo que configura PostCSS, una herramienta que transforma el CSS con plugins. Tailwind usa esto para procesar su CSS. 
                 <span class="tooltip" tabindex="0">Contenido.
                   <span class="tooltiptext">                    
                     <strong style="color: rgb(83, 252, 5);">tailwindcss:</strong> Aplica la lógica de Tailwind para generar utilidades.</br>                
-                    <strong style="color: rgb(83, 252, 5);">autoprefixer:</strong> Añade automáticamente los prefijos necesarios</br>  
-                    para compatibilidad con distintos navegadores </br> 
-                    (como -webkit-, -moz-, etc).</br>
+                    <strong style="color: rgb(83, 252, 5);">autoprefixer:</strong> Añade automáticamente los prefijos necesarios para compatibilidad con</br>  
+                    distintos navegadores (como -webkit-, -moz-, etc).                 
                   </span>
                 </span>
               </span>
             
-              <p style="text-align: left; color: black; font-size: 1.5rem">
+              <p style="text-align: left; color: black; font-size: 1.4rem">
                 Archivo generado automáticamente con
                 <code><strong> tailwindcss init -p</strong></code></br>
-                <strong>-p</strong> significa que incluye también la configuración de PostCSS 
-                además de la de Tailwind. Es un atajo que hace dos cosas al mismo tiempo:</br>
+                <strong>-p</strong> significa que incluye la configuración de PostCSS 
+                además de la de Tailwind. </br>Es un atajo que hace dos cosas al mismo tiempo:</br>
                 1. Crea el archivo tailwind.config.js con una configuración base.</br>
                 2. Crea el archivo postcss.config.js con la configuración necesaria para usar Tailwind como plugin de PostCSS.
               </p>
