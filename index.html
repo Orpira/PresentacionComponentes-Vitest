@@ -335,10 +335,10 @@
 
       <!-- Tema 1: Tailwind CSS -->
 
-      <section id="tailwind-section" data-transition="concave" data-background-transition="slide">
+      <section id="tailwind-section" data-transition="concave" data-background-transition="zoom">
         <div style="text-align: justify"></div>
         <h1 style="color: rgb(247, 245, 250); text-align: center">
-          Tailwind CSS
+          🎨 Tailwind CSS
         </h1>
         <p style="text-align: justify">
           Tailwind CSS es un framework de utilidades para CSS que permite
@@ -348,7 +348,7 @@
       </section>
 
       <section data-transition="concave" data-background-transition="slide">
-        <h2 style="text-align: center">¿Para qué sirve?</h2>
+        <h2 style="text-align: center">ℹ️ ¿Para qué sirve?</h2>
         <ul>
           <li>Estilizar interfaces rápidamente</li>
           <li>Mantener consistencia</li>
@@ -361,7 +361,7 @@
 
       <section>
         <h2 style="text-align: center" data-transition="zoom" data-background-transition="convex">
-          CSS tradicional vs Tailwind
+          ⚖️ CSS tradicional vs Tailwind
         </h2>
         <pre><code class="hljs language-css" data-trim>
 /* CSS tradicional */
@@ -382,10 +382,10 @@
       </section>
 
       <!-- Grupo principal de slides verticales -->
-      <section>
+      <section data-transition="concave" data-background-transition="zoom">
         <!-- Slide padre (primera pantalla) -->
         <section>
-          <h2 style="text-align: center">Proceso de instalación</h2>
+          <h2 style="text-align: center">⚙️ Proceso de instalación</h2>
           <p style="text-align: justify">
             Para usar Tailwind en un proyecto, lo ideal es integrarlo con
             herramientas como Vite, Webpack o frameworks como React, Vue o
@@ -399,14 +399,14 @@
 
         <!-- Slide hija (segunda pantalla - se desplaza hacia abajo) -->
         <section>
-          <h2 style="text-align: center; color: #fdfcfc">Requisitos:</h2>
+          <h2 style="text-align: center; color: #fdfcfc">🛠️ Requisitos</h2>
           <p style="text-align: justify">
             Asegúrate de tener Node.js y un gestor de paquetes como npm o yarn
             instalados.
           </p>
           <div class="concept-card">
             <h3 style="text-align: center; color: #013341">
-              Instalación de Tailwind CSS:
+              📦 Instalación de Tailwind CSS:
             </h3>
             <p style="text-align: justify; color: black ; font-size: 2rem">
               Ejecutar las siguientes instrucciones en la terminal de tu proyecto:
@@ -427,7 +427,7 @@
         <section>
           <div class="concept-card">
             <h3 style="text-align: center; color: #013341">
-              Configuración Base: tailwind.config.js
+              🧩 Configuración Base: tailwind.config.js
             </h3>
             <pre><code class="language-js">
   // tailwind.config.js
@@ -441,8 +441,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
-        </code></pre>
+}</code></pre>
             <span style="text-align: center; color: black; font-size: 1.3rem">
               Archivo de configuración principal de Tailwind CSS. Define cómo
               personalizar Tailwind en un proyecto.
@@ -486,7 +485,7 @@ module.exports = {
         <section>
           <div class="concept-card">
             <h3 style="text-align: center; color: #013341">
-              Configuración necesaria: postcss.config.js
+              🧩 Configuración necesaria: postcss.config.js
             </h3>
             <pre><code class="language-js">
   // postcss.config.js
@@ -539,8 +538,8 @@ module.exports = {
       </section>
 
 
-      <section>
-        <h2 style="text-align: center"> Estructuración</h2>
+      <section data-transition="zoom" data-background-transition="slide">
+        <h2 style="text-align: center">🗂 Estructuración</h2>
         <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
           En un proyecto típico con Tailwind, la estructura suele ser:
         </p>
@@ -550,7 +549,7 @@ module.exports = {
   └── App.jsx    ← Componentes (React, por ejemplo)
 tailwind.config.js
           </code></pre>
-        <h3 style="text-align: center">Archivo CSS base:</h3>
+        <h3 style="text-align: center">🧾 Archivo CSS base:</h3>
         <pre><code class="hljs language-css" data-trim>   
 @tailwind base;
 @tailwind components;
@@ -558,8 +557,8 @@ tailwind.config.js
           </code></pre>
       </section>
 
-      <section>
-        <h1 style="text-align: center">Sintaxis</h1>
+      <section data-transition="zoom" data-background-transition="zoom">
+        <h1 style="text-align: center">📄 Sintaxis</h1>
         <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
           Tailwind utiliza clases semánticas y de propósito único. Cada clase representa una única propiedad de estilo.
         </p>
@@ -583,7 +582,7 @@ tailwind.config.js
 
 
       <section>
-        <h1 style="text-align: center;"> Ejemplo </h1>
+        <h1 style="text-align: center;">📝 Ejemplo </h1>
         <pre><code class="hljs language-html" data-trim>
 <form class="max-w-md mx-auto p-4 border rounded shadow space-y-4">
   <input
@@ -617,18 +616,10 @@ tailwind.config.js
           </div>
         </div>
       </section>
-      <section>
-        <h2>¿Volver al inicio?</h2>
-        <button onclick="Reveal.slide(1, 1)"
-          style="padding: 10px 20px; background: #013341; color: white; border: none; border-radius: 5px; cursor: pointer;">
-          Click para reiniciar
-        </button>
-      </section>
-
+      
       <!-- Tema 2: Componentes -->
-      <section data-background="#ffffff" id="patrones-section" data-transition="concave"
-        data-background-transition="slide">
-        <h1 style="text-align: center;">Patrones de Componentes</h1>
+      <section data-background="#ffffff" id="patrones-section" data-transition="convexo"  data-background-transition="slide">
+        <h1 style="text-align: center;">🛠️ Patrones de Componentes</h1>
         <p style="text-align: justify; font-size: 2rem;">
           Son las partes principales y reutilizables que forman una aplicación web hecha con React. </p>
         <p class="fragment" style="text-align: justify; font-size: 2rem;">
@@ -651,7 +642,7 @@ tailwind.config.js
 
       <!-- Slide 2: Componentes -->
       <section data-background="#ffffff">
-        <h2 style="margin-bottom: 50px;text-align: center;">Desarrollo con Componentes<br></h2>
+        <h2 style="margin-bottom: 50px;text-align: center;">🧠 Desarrollo con Componentes<br></h2>
         <h4 style="text-align: center;"><strong>Como construir un coche</strong> </h4>
         <p style="text-align: justify; font-size: 1.7rem; color: rgb(3, 1, 77);">
           <br>Cada parte es un componente: el volante, las ruedas, los asientos, el motor, etc.
@@ -709,8 +700,8 @@ tailwind.config.js
         </div>
       </section>
 
-      <section data-background="#ffffff">
-        <h1 style="text-align: center;">¿Para qué sirven?</h1>
+      <section data-background="#ffffff" data-background-transition="slide" data-transition="concave">
+        <h2 style="text-align: center;">📌 ¿Para qué sirven?</h2>
         <ul>
           <li>Organizar código en partes pequeñas.</li>
           <li>Hacer que las aplicaciones sean más fáciles de mantener.</li>
@@ -718,8 +709,8 @@ tailwind.config.js
         </ul>
       </section>
 
-      <section data-background="#ffffff">
-        <h1 style="text-align: center;">Sintaxis</h1>
+      <section data-background="#ffffff" data-background-transition="slide" data-transition="zoom">
+        <h1 style="text-align: center;">📄 Sintaxis</h1>
         <pre><code class="language-jsx">import React from 'react';
 
 const Card = ({ title, children }) => (
@@ -738,7 +729,7 @@ const Card = ({ title, children }) => (
       </section>
 
       <section data-background="#ffffff">
-        <h2 style="text-align: center;">Comparación rápida</h2>
+        <h2 style="text-align: center;">🆚 Comparación rápida</h2>
 
         <style>
           .concept-table {
@@ -825,7 +816,7 @@ const Card = ({ title, children }) => (
       </section>
 
       <section data-background="#ffffff">
-        <h1 style="text-align: center;">Casos de Uso</h1>
+        <h1 style="text-align: center;">🧰 Casos de Uso</h1>
         <ul>
           <li class="fragment" style="text-align: justify;">Botones con comportamiento dinámico</li>
           <li class="fragment" style="text-align: justify;">Layouts: Header + Sidebar + Content</li>
@@ -834,14 +825,7 @@ const Card = ({ title, children }) => (
         </ul>
       </section>
 
-      <section data-background="#ffffff">
-        <h2>¿Volver al inicio?</h2>
-        <button onclick="Reveal.slide(1, 1)"
-          style="padding: 10px 20px; background: #013341; color: white; border: none; border-radius: 5px; cursor: pointer;">
-          Click para reiniciar
-        </button>
-      </section>
-
+      
       <!-- Tema 3: Testing -->
       
 <section id="testing-section" data-auto-animate>
@@ -870,8 +854,8 @@ const Card = ({ title, children }) => (
   
 </section>
 
-<section>
-  <h2 style="text-align: center; color: #fdfcfc; font-size: 5rem">Tipos de Testing</h2>
+<section data-background-transition="zoom" data-transition="slide">
+  <h2 style="text-align: center; color: #fdfcfc; font-size: 5rem">🔍 Tipos de Testing</h2>
   <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
     Existen diferentes tipos de pruebas que se pueden realizar en una aplicación. Aquí hay una tabla con los tipos
     más comunes:
@@ -905,10 +889,10 @@ const Card = ({ title, children }) => (
 
   <aside class="notes">
     📌 **E2E (End-to-End)**: Opciones E2E para pruebas reales de flujo completo (login, navegación, errores, etc.).
-    </aside>  
+    </aside> 
+</section>
 
-  </section>
-      <section>
+<section data-background-transition="slide" data-transition="zoom">
         <h2 style="text-align: center;"> ⚙️ Herramientas necesarias</h2>
         <br>
          <pre><code class="hljs language-html"; style="color: rgb(234, 238, 238); text-align: center;" data-trim> 
@@ -924,12 +908,12 @@ const Card = ({ title, children }) => (
 <pre><code class="hljs language-bash" data-trim>
 npm install -D vitest @testing-library/react @testing-library/user-event @testing-library/jest-dom
           </code></pre>        
-      </section>
+</section>
 
-      <section>
-        <h3 style="text-align: center;">🗂 Archivos de configuración</h3>
+<section>
+        <h3 style="text-align: center;">📄 Archivos de configuración</h3>
         <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
-          - vite.config.js
+          🔤 vite.config.js
         </p>
         <pre><code class="hljs language-bash" data-trim>
 import { defineConfig } from 'vite';
@@ -941,34 +925,34 @@ export default defineConfig({
   }
 });   </code></pre>  
 <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
-          - src/setupTests.js
+          🔤 src/setupTests.js
         </p>
         <pre><code class="hljs language-bash" data-trim>
 import '@testing-library/jest-dom';
       </code></pre>
       <P style="text-align: left; color: #fdfcfc; font-size: 1.8rem"> Permite usar métodos como toBeInTheDocument(), toHaveTextContent(), etc.</P>
-      </section>
+</section>
 
-      <section>
-        <h2 style="text-align: center;"> 📘 Librerías de Testing</h2>
+<section>
+        <h2 style="text-align: center;"> 📚 Librerías de Testing</h2>
         <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
-          <strong>✅ Vitest</strong><br>
+          <strong style="text-align: center; color: #05037a">📘 Vitest</strong><br>
             * Reemplazo moderno y más rápido de Jest.<br>
             * Compatible con ESM y proyectos Vite.<br>
             * Sintaxis similar a Jest: describe, it, expect.<br>
         </p>  
         <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
-          <strong>✅ @testing-library/react</strong><br>
+          <strong style="text-align: center; color: #05037a">📘 @testing-library/react</strong><br>
             * Ayuda a renderizar componentes en un entorno de test.<br>
             * Promueve el uso de consultas accesibles como getByRole, getByLabelText.<br>
         </p>
         <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
-          <strong>✅ @testing-library/user-event</strong><br>
+          <strong style="text-align: center; color: #05037a">📘 @testing-library/user-event</strong><br>
             * Simula interacciones como un usuario real: clics, escritura, selección.<br>
             * Sustituye fireEvent por una experiencia más realista.<br>
         </p>
         <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
-          <strong>✅ @testing-library/jest-dom</strong><br>
+          <strong style="text-align: center; color: #05037a">📘 @testing-library/jest-dom</strong><br>
             * Extiende expect con matchers útiles:<br>
               - toBeInTheDocument()<br>
               - toHaveTextContent()<br>
@@ -978,11 +962,10 @@ import '@testing-library/jest-dom';
     📌 **Qué es matchers**: métodos o funciones que se utilizan para comparar el resultado real de una prueba con el resultado esperado, definiendo así las condiciones que debe cumplir el 
                             código para que el test se considere exitoso.
     </aside>  
+</section>  
 
-    
-    </section>  
-
-    <section>
+<section>
+  <section>
       <h3 style="text-align: center;">🧪 Prueba Render de un componente</h3>
       <pre><code class="hljs language-js" data-trim>
 import { render, screen } from '@testing-library/react';
@@ -995,9 +978,9 @@ test('muestra el contador inicial en 0', () => {
       <p style="font-size: 2.2rem; text-align: center;">1. Importa las funciones necesarias de la librería.</p>
       <p style="font-size: 2.2rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
       <p style="font-size: 2.2rem; text-align: center;">3. Verifica que el texto del botón sea "Clicks: 0".</p>
-    </section>
+</section>
 
-    <section>
+<section>
       <h3 style="text-align: center;">🧪 Prueba Interacción con el usuario</h3>
       <pre><code class="hljs language-js" data-trim>
 import userEvent from '@testing-library/user-event';
@@ -1013,11 +996,11 @@ test('incrementa el contador al hacer clic', async () => {
     <p style="font-size: 2rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
     <p style="font-size: 2rem; text-align: center;">3. Simula un clic en el botón.</p>
     <p style="font-size: 2rem; text-align: center;">4. Verifica que el texto del botón haya cambiado a "Clicks: 1".</p>
-   </section>
+</section>
 
-   <section>
-      <h3 style="text-align: center;">🧪 Prueba Interacción con formulario</h3>
-      <pre><code class="hljs language-js" data-trim>
+<section>
+  <h3 style="text-align: center;">🧪 Prueba Interacción con formulario</h3>
+  <pre><code class="hljs language-js" data-trim>
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest'; 
@@ -1038,28 +1021,178 @@ test('envía datos de email y password', async () => {
   });
 });
 </code></pre>
-<p style="font-size: 1.3rem; text-align: center;">1. Importa las funciones necesarias de la librería.</p> 
-<p style="font-size: 1.3rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
-<p style="font-size: 1.3rem; text-align: center;">3. Simula la escritura en los campos de email, password y clic en el botón de login.</p>  
-<p style="font-size: 1.3rem; text-align: center;">4. Verifica que la función onSubmit haya sido llamada con los datos correctos.</p>
-   </section>
+  <p style="font-size: 1.3rem; text-align: center;">1. Importa las funciones necesarias de la librería.</p> 
+  <p style="font-size: 1.3rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
+  <p style="font-size: 1.3rem; text-align: center;">3. Simula la escritura en los campos de email, password y clic en el botón de login.</p>  
+  <p style="font-size: 1.3rem; text-align: center;">4. Verifica que la función onSubmit haya sido llamada con los datos correctos.</p>
+</section>
+</section>
+
+<section>
+  <h3 style="text-align: center;">🗂 Estructura de archivos</h3>
+  <p style="text-align: center; color: #fdfcfc; font-size: 2rem">
+          Sugerencia de estructura de archivos:
+  </p>
+  <pre><code class="hljs language-bash" data-trim>
+src/
+│
+├── components/
+│   └── Button.jsx 
+│   └── Button.test.jsx
+│
+├── setupTests.js
+├── App.jsx
+└── main.jsx
+  </code></pre>  
+  <p style="text-align: justify; color: #fdfcfc; font-size: 2rem"> También se pueden separar los tests en una carpeta <strong style="color: #d0fd07;">/tests</strong> externa si se prefiere mayor limpieza.</p>
+</section>
 
         
-    <section>
-      <h3>Cobertura de Tests</h3>
-      <p>¿Qué tanto del código ha sido probado?</p>
-      <pre><code class="hljs language-bash" data-trim>
-npx vitest --coverage
-        </code></pre>
-      <p>Resultados: statements, branches, functions, lines</p>
-    </section>
+<section>
+  <h3 style="text-align: center;">📊 Cobertura de Testing (Coverage)</h3>
+  <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">Es una métrica que indica qué porcentaje del código fuente ha sido ejecutado por las pruebas automatizadas.</p>
+  <h4 style="text-align: center; color: #01022c;">¿Para qué sirve medir la cobertura?</h4>
+  <table class="concept-table">
+    <thead>
+      <tr>
+        <th style="text-align: center; font-size: 1.8rem">Beneficio</th>
+        <th style="text-align: center; font-size: 1.8rem">Explicación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color: #031e69; text-align: justify; font-size: 1.4rem" >✔️ Detectar código sin pruebas.</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem" ;>Te ayuda a ver qué funciones, condiciones o componentes no están cubiertos.</td>
+      </tr>
+      <tr>
+        <td style="color: #031e69; text-align: justify; font-size: 1.4rem">✔️ Mejorar la calidad del software.</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem" ;>Si pruebas más código, reduces el riesgo de errores no detectados.
+      </td>
+      <tr>
+        <td style="color: #031e69; text-align: justify; font-size: 1.4rem" >✔️ Tomar decisiones informadas.</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem" ;>Puedes decidir dónde enfocar los esfuerzos de testing (por ejemplo, en funciones críticas).</td>
+      </tr>
+      <tr>
+        <td style="color: #031e69; text-align: ljustifyeft; font-size: 1.4rem">✔️ Dar confianza en refactorizaciones.</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem";>Si tienes buena cobertura, es menos probable que rompas algo al cambiar código.</td>
+      </tr>
+    </tbody>
+  </table>
+  </code></pre>  
+  <aside class="notes">
+    📌 **Qué es tomar decisiones informadas**: Cuando medimos la cobertura de pruebas, obtenemos un informe concreto y visual sobre qué partes del código están siendo ejecutadas durante los tests y cuáles no.
+        Esto permite que, como desarrolladores o líderes técnicos, podamos decidir con datos reales cómo mejorar o mantener el proyecto.
+    <br>📌 **Qué significa "dar confianza en refactorizaciones**: Refactorizar significa modificar el código para mejorar su estructura, legibilidad o rendimiento sin cambiar lo que hace (su comportamiento).
+    Una buena cobertura de tests te da confianza para refactorizar porque te avisa si algo deja de funcionar
+  </aside>    
+</section>
+
+<section>
+  <h2 style="text-align: center; color: #fdfcfc; font-size: 5rem">🧪 Tipos de cobertura</h2>
+    <table class="concept-table">
+      <thead>
+        <tr>
+          <th style="font-size: 2rem; text-align: center;">Cobertura</th>
+          <th style="font-size: 2rem; text-align: center;">Qué Mide</th>
+          <th style="font-size: 2rem; text-align: center;">Ejemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-size: 1.8rem; color: #001b36; text-align: center;">Statements</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">Cuántas instrucciones fueron ejecutadas</td>
+          <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">let x = 5;</td>
+        </tr>
+        <tr>
+          <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Branches</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">Cobertura de condiciones (if/else, ternarios, etc.)</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">if (user) {...} else {...}</td>
+        </tr>
+        <tr>
+          <td style="font-size: 1.8rem; color: #001b36;  text-align: center;" >Functions</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">Cuántas funciones han sido llamadas</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">function login() {...}</td>
+        </tr>
+        <tr>
+          <td style="font-size: 1.8rem; color: #001b36;  text-align: center;" >Lines</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">Cuántas líneas totales han sido ejecutadas</td>
+          <td style="font-size: 1.5rem; color: #001b36;  text-align: center;">Línea por línea del archivo</td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+
+<section>
+  <h3 style="text-align: center;">⚙️ ¿Cómo se mide la cobertura Vitest?</h3>
+  <p style="text-align: center; color: #fdfcfc; font-size: 2rem">1. Instalar la dependencia:</p>
+  <pre><code class="hljs language-bash" data-trim>
+npm install --save-dev vitest
+  </code></pre>
+  <p style="text-align: center; color: #fdfcfc; font-size: 2rem">2. Agregar a vite.config.js:</p>
+  <pre><code class="hljs language-bash" data-trim>
+test: {
+  coverage: {
+    reporter: ['text', 'html'],
+  },
+},
+</code></pre>
+<p style="text-align: center; color: #fdfcfc; font-size: 2rem">3. Ejecuta los tests con cobertura:</p>
+  <pre><code class="hljs language-bash" data-trim>
+npx vitest run --coverage
+</code></pre>
+</section>
 
       <section>
-        <h2>¡Gracias!</h2>
-        <p>Dudas, comentarios y ejercicios ahora 📣</p>
+        <h2 style="text-align: center;">📂 Resultados generados</h2>
+        <p style="text-align: justify; color: #fdfcfc; font-size: 1.5rem">✅ <strong style="color: #fab908;">Resumen</strong> en consola (tabla con % de cobertura por archivo).</p>
+        <p style="text-align: justify; color: #fdfcfc; font-size: 1.5rem">✅ <strong style="color: #fab908;">Carpeta</strong> /coverage/ con un informe visual en HTML.</p>
+        <p style="text-align: justify; color: #fdfcfc; font-size: 1.5rem">Abrir archivo <strong style="color: #fab908;">index.html</strong> dentro de /coverage en el navegador para ver:
+          <ul>
+            <li style="text-align: center; color: #019b1b; font-size: 1.8rem">Líneas cubiertas (en verde).</li>
+            <li style="text-align: center; color: #b41d02; font-size: 1.8rem"> Líneas no cubiertas (en rojo).</li>
+            <li style="text-align: center; color: #fdfcfc; font-size: 1.8rem"> Archivos más débiles en cobertura.</li>
+          </ul>
+      </section>  
+
+      <section>
+        <h3 style="text-align: center;">🎯 ¿Qué nivel (%) de cobertura es suficiente?</h3>
+        <table class="concept-table">
+    <thead>
+      <tr>
+        <th style="text-align: center; font-size: 1.8rem">Nivel de cobertura</th>
+        <th style="text-align: center; font-size: 1.8rem">Interpretación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color: #031e69; text-align: justify; font-size: 1.4rem" >🔴 Menos del 50%</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem" ;><strong style="color: #b41d02;">Bajo, </strong>alto riesgo de errores no detectados.</td>
+      </tr>
+      <tr>
+        <td style="color: #031e69; text-align: justify; font-size: 1.4rem">🟠 50–80%</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem" ;><strong style="color: #fc9003;">Aceptable, </strong>pero podría mejorar.</td>
+      </td>
+      <tr>
+        <td style="color: #031e69; text-align: justify; font-size: 1.4rem" >🟢 80–100%</td>
+        <td style="color: #031e69; text-align: left; font-size: 1.4rem" ;><strong style="color: #208302;">Buen nivel: </strong>confianza sólida en el código.</td>
+      </tr>
+    </tbody>
+    </table>
+    <p style="text-align: left; font-size: 2rem; color: #f3f4f7;">
+          ⚠️ Tener 100% de cobertura <b style="color: #d7f358;">no garantiza que el código esté bien probado</b>, solo que ha sido ejecutado. <br>
+          La <b style="color: #d7f358;">calidad de las pruebas es tan importante como la cantidad.</b>
+        </p>
+  
+      </section> 
+  
+      <section data-background="#ffffff">
+        <h1>¡Gracias!</h1>
+        <button onclick="Reveal.slide(1, 1)"
+          style="padding: 10px 20px; background: #013341; color: white; border: none; border-radius: 5px; cursor: pointer;">
+          Inicio
+        </button>
       </section>
-    </div>
-  </div>
+
   <script src="./plugin/highlight/highlight.js"></script>
   <script src="./dist/reveal.js"></script>
   <script>
