@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Frontend Bootcamp - Presentación</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dist/reveal.css" ; />
-    <link rel="stylesheet" href="./dist/theme/league.css" id="theme" />
-    <link rel="stylesheet" href="./plugin/highlight/monokai.css" />
-    <link rel="stylesheet" href="style.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <title>Frontend Bootcamp - Presentación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./dist/reveal.css" ; />
+  <link rel="stylesheet" href="./dist/theme/league.css" id="theme" />
+  <link rel="stylesheet" href="./plugin/highlight/monokai.css" />
+  <link rel="stylesheet" href="style.css" />
 
-    <style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
     .car-analogy {
       height: 400px;
       position: relative;
       margin: 0 auto;
       width: 80%;
     }
-    
+
     .car-component {
       position: absolute;
       opacity: 0;
@@ -32,11 +30,11 @@
       background: white;
       padding: 12px 20px;
       border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       width: 240px;
       z-index: 1;
     }
-    
+
     .car-component img {
       width: 50px;
       height: 50px;
@@ -44,22 +42,22 @@
       object-fit: contain;
       transition: transform 0.3s;
     }
-    
+
     .car-component:hover img {
       transform: scale(1.1) rotate(-5deg);
     }
-    
+
     .component-info {
       text-align: left;
     }
-    
+
     .component-name {
       font-weight: 600;
       margin: 0;
       color: #2c3e50;
       font-size: 1.1em;
     }
-    
+
     .component-code {
       font-family: 'Courier New', monospace;
       background: #f1f3f5;
@@ -70,37 +68,53 @@
       margin: 5px 0 0 0;
       display: inline-block;
     }
-    
+
     .car-component.visible {
       opacity: 1;
       transform: scale(1) translateY(0);
     }
-    
+
     /* Posiciones específicas */
-    #steering-wheel { top: 10%; left: 5%; }
-    #wheels { bottom: 15%; left: 20%; }
-    #seats { top: 30%; right: 15%; }
-    #engine { bottom: 45%; right: 10%; }
-    #full-car { 
-      top: 40%; 
-      left: 50%; 
-      transform: translate(-50%, -50%) scale(0); 
+    #steering-wheel {
+      top: 10%;
+      left: 5%;
+    }
+
+    #wheels {
+      bottom: 15%;
+      left: 20%;
+    }
+
+    #seats {
+      top: 30%;
+      right: 15%;
+    }
+
+    #engine {
+      bottom: 45%;
+      right: 10%;
+    }
+
+    #full-car {
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
       width: 180px;
       text-align: center;
       flex-direction: column;
       padding: 25px;
     }
-    
-    #full-car.visible { 
-      transform: translate(-50%, -50%) scale(1); 
+
+    #full-car.visible {
+      transform: translate(-50%, -50%) scale(1);
     }
-    
+
     #full-car img {
       width: 100px;
       height: auto;
       margin: 0 0 15px 0;
     }
-    
+
     .assembly-line {
       position: absolute;
       height: 4px;
@@ -112,40 +126,46 @@
       opacity: 0;
       transition: opacity 0.5s;
     }
-    
+
     .assembly-line.visible {
       opacity: 1;
     }
-    
+
     @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
     }
-    
+
     #full-car.visible img {
       animation: float 3s ease-in-out infinite;
     }
-    </style>
-    <script src="./dist/reveal.js"></script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+  </style>
+  <script src="./dist/reveal.js"></script>
+</head>
 
-        <section data-background="#1a1a2e" data-transition="zoom">
-          <!-- Fondo oscuro elegante + transición de zoom -->
-          <div
-            style="text-align: center; font-family: 'Montserrat', sans-serif"
-          >
-            <!-- Logo de React -->
-            <div style="margin-bottom: 20px">
-              <img src="./examples/assets/react.png" width="100" />
-            </div>
+<body>
+  <div class="reveal">
+    <div class="slides">
 
-            <!-- Título con gradiente -->
-            <h2
-              style="
+      <section data-background="#1a1a2e" data-transition="zoom">
+        <!-- Fondo oscuro elegante + transición de zoom -->
+        <div style="text-align: center; font-family: 'Montserrat', sans-serif">
+          <!-- Logo de React -->
+          <div style="margin-bottom: 20px">
+            <img src="./examples/assets/react.png" width="100" />
+          </div>
+
+          <!-- Título con gradiente -->
+          <h2 style="
                 font-size: 4.5rem;
                 margin-bottom: 0;
                 background: linear-gradient(45deg, #61dafb, #cbddf3);
@@ -153,14 +173,12 @@
                 -webkit-text-fill-color: transparent;
                 font-weight: 700;
                 text-transform: uppercase;
-              "
-            >
-              LEIDY & COMPANY
-            </h2>
+              ">
+            LEIDY & COMPANY
+          </h2>
 
-            <!-- Línea divisora decorativa -->
-            <hr
-              style="
+          <!-- Línea divisora decorativa -->
+          <hr style="
                 width: 150px;
                 border: 0;
                 height: 2px;
@@ -171,24 +189,20 @@
                   transparent
                 );
                 margin: 20px auto;
-              "
-            />
+              " />
 
-            <!-- Subtítulo -->
-            <p
-              style="
+          <!-- Subtítulo -->
+          <p style="
                 color: #b8b8b8;
                 letter-spacing: 3px;
                 font-size: 1rem;
                 margin-bottom: 40px;
-              "
-            >
-              INTEGRADO POR
-            </p>
+              ">
+            INTEGRADO POR
+          </p>
 
-            <!-- Lista de nombres con animación -->
-            <div
-              style="
+          <!-- Lista de nombres con animación -->
+          <div style="
                 display: inline-block;
                 text-align: left;
                 background: rgba(15, 52, 96, 0.3);
@@ -196,181 +210,160 @@
                 border-radius: 15px;
                 backdrop-filter: blur(5px);
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-              "
-            >
-              <div
-                class="team-member"
-                style="display: flex; align-items: center; margin: 15px 0"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  style="fill: #61dafb; margin-right: 15px"
-                >
-                  <path d="M12 2L4 12l8 10 8-10z" />
-                </svg>
-                <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">
-                  Leire
-                </p>
-              </div>
-              <div
-                class="team-member"
-                style="display: flex; align-items: center; margin: 15px 0"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  style="fill: #61dafb; margin-right: 15px"
-                >
-                  <path d="M12 2L4 12l8 10 8-10z" />
-                </svg>
-                <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">Ion</p>
-              </div>
-              <div
-                class="team-member"
-                style="display: flex; align-items: center; margin: 15px 0"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  style="fill: #61dafb; margin-right: 15px"
-                >
-                  <path d="M12 2L4 12l8 10 8-10z" />
-                </svg>
-                <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">
-                  Orlando
-                </p>
-              </div>
+              ">
+            <div class="team-member" style="display: flex; align-items: center; margin: 15px 0">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="fill: #61dafb; margin-right: 15px">
+                <path d="M12 2L4 12l8 10 8-10z" />
+              </svg>
+              <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">
+                Leire
+              </p>
             </div>
+            <div class="team-member" style="display: flex; align-items: center; margin: 15px 0">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="fill: #61dafb; margin-right: 15px">
+                <path d="M12 2L4 12l8 10 8-10z" />
+              </svg>
+              <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">Ion</p>
+            </div>
+            <div class="team-member" style="display: flex; align-items: center; margin: 15px 0">
+              <svg width="20" height="20" viewBox="0 0 24 24" style="fill: #61dafb; margin-right: 15px">
+                <path d="M12 2L4 12l8 10 8-10z" />
+              </svg>
+              <p style="margin: 0; font-size: 1.8rem; color: #f1f1f1">
+                Orlando
+              </p>
+            </div>
+          </div>
 
-            <!-- Pie de página -->
-            <p
-              style="
+          <!-- Pie de página -->
+          <p style="
                 position: absolute;
                 bottom: 20px;
                 right: 30px;
                 color: #555;
                 font-size: 0.8rem;
-              "
-            >
-              Powered by <span style="color: #61dafb">Leidy & Company</span> ·
-              2025
-            </p>
-          </div>
-        </section>
+              ">
+            Powered by <span style="color: #61dafb">Leidy & Company</span> ·
+            2025
+          </p>
+        </div>
+      </section>
 
-         <section data-background="#ffffff" data-transition="zoom">
-          <div style="text-align: center">
-            <h2>Componentes + Vitest</h2>
-            
-            <div style="margin-bottom: 20px">
-              <img src="./examples/assets/react.png" width="100" style="display: inline-block; vertical-align: middle;" />
-              <p style="
+      <section data-background="#ffffff" data-transition="zoom">
+        <div style="text-align: center">
+          <h2>Componentes + Vitest</h2>
+
+          <div style="margin-bottom: 20px">
+            <img src="./examples/assets/react.png" width="100" style="display: inline-block; vertical-align: middle;" />
+            <p style="
                 color: #161616;
                 font-size: 2em;
                 display: inline-block;
                 vertical-align: middle;
                 margin: 0 0 0 10px; /* Margen izquierdo para separación */
               ">
-                <strong>React</strong>
-              </p>
-              <hr>
-            </div>
+              <strong>React</strong>
+            </p>
+            <hr>
+          </div>
 
-            <img src="./examples/assets/Tailwind.png" width="100" style="display: inline-block; vertical-align: middle;" />
-              <p style="
+          <img src="./examples/assets/Tailwind.png" width="100"
+            style="display: inline-block; vertical-align: middle;" />
+          <p style="
                 color: #161616;
                 font-size: 1.5em;
                 display: inline-block;
                 vertical-align: middle;
                 margin: 0 0 0 10px; /* Margen izquierdo para separación */
               ">
-              Tailwind CSS</strong> 
-              </p>
-              <br>
-              <img src="./examples/assets/Vitest.png" width="100" style="display: inline-block; vertical-align: middle;" />
-              <p style="
+            Tailwind CSS
+          </p>
+          <br>
+          <img src="./examples/assets/Vitest.png" width="100" style="display: inline-block; vertical-align: middle;" />
+          <p style="
                 color: #161616;
-                font-size: 2em;
+                font-size: 1.5em;
                 display: inline-block;
                 vertical-align: middle;
                 margin: 0 0 0 10px; /* Margen izquierdo para separación */
               ">
-              <strong>Vitest</strong>
-              </p>
-            <div style="margin-top: 40px">
-              <span class="tech-badge"><a href="#/tailwind-section">Tailwind CSS</a></span>
-              <span class="tech-badge"><a href="#/patrones-section">Patrones de Componentes</a></span>
-              <span class="tech-badge">Testing-Library</span>
-            </div>
-          </div>
-        </section>
-
-        <style>
-          @keyframes spin {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
-
-          /* Animación para los nombres */
-          .team-member {
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.6s ease-out;
-          }
-          section.present .team-member {
-            opacity: 1;
-            transform: translateX(0);
-          }
-          section.present .team-member:nth-child(1) {
-            transition-delay: 0.2s;
-          }
-          section.present .team-member:nth-child(2) {
-            transition-delay: 0.4s;
-          }
-          section.present .team-member:nth-child(3) {
-            transition-delay: 0.6s;
-          }
-        </style>
-
-        <!-- Tema 1: Tailwind CSS -->
-
-        <section id="tailwind-section" data-transition="concave" data-background-transition="slide">
-          <div style="text-align: justify"></div>
-          <h1 style="color: rgb(247, 245, 250); text-align: center">
-            Tailwind CSS
-          </h1>
-          <p style="text-align: justify">
-            Tailwind CSS es un framework de utilidades para CSS que permite
-            crear interfaces de usuario rápidas y consistentes sin necesidad de
-            escribir CSS personalizado.
+            Vitest
           </p>
-        </section>
+          <div style="margin-top: 40px">
+            <span class="tech-badge"><a href="#/tailwind-section">Tailwind CSS</a></span>
+            <span class="tech-badge"><a href="#/patrones-section">Patrones de Componentes</a></span>
+            <span class="tech-badge"><a href="#/testing-section">Testing-Library</a></span>
+          </div>
+        </div>
+      </section>
 
-        <section data-transition="concave" data-background-transition="slide">
-          <h2 style="text-align: center">¿Para qué sirve?</h2>
-          <ul>
-            <li>Estilizar interfaces rápidamente</li>
-            <li>Mantener consistencia</li>
-            <li>Evitar conflictos de nombres y cascada CSS</li>
-            <li>Permitir diseño responsivo y adaptativo</li>
-            <li>Fomentar la reutilización de estilos</li>
-            <li>Mejorar la productividad del desarrollador</li>
-          </ul>
-        </section>
+      <style>
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
 
-        <section>
-          <h2 style="text-align: center" data-transition="zoom" data-background-transition="convex">
-            CSS tradicional vs Tailwind
-          </h2>
-          <pre><code class="hljs language-css" data-trim>
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        /* Animación para los nombres */
+        .team-member {
+          opacity: 0;
+          transform: translateX(-20px);
+          transition: all 0.6s ease-out;
+        }
+
+        section.present .team-member {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        section.present .team-member:nth-child(1) {
+          transition-delay: 0.2s;
+        }
+
+        section.present .team-member:nth-child(2) {
+          transition-delay: 0.4s;
+        }
+
+        section.present .team-member:nth-child(3) {
+          transition-delay: 0.6s;
+        }
+      </style>
+
+      <!-- Tema 1: Tailwind CSS -->
+
+      <section id="tailwind-section" data-transition="concave" data-background-transition="slide">
+        <div style="text-align: justify"></div>
+        <h1 style="color: rgb(247, 245, 250); text-align: center">
+          Tailwind CSS
+        </h1>
+        <p style="text-align: justify">
+          Tailwind CSS es un framework de utilidades para CSS que permite
+          crear interfaces de usuario rápidas y consistentes sin necesidad de
+          escribir CSS personalizado.
+        </p>
+      </section>
+
+      <section data-transition="concave" data-background-transition="slide">
+        <h2 style="text-align: center">¿Para qué sirve?</h2>
+        <ul>
+          <li>Estilizar interfaces rápidamente</li>
+          <li>Mantener consistencia</li>
+          <li>Evitar conflictos de nombres y cascada CSS</li>
+          <li>Permitir diseño responsivo y adaptativo</li>
+          <li>Fomentar la reutilización de estilos</li>
+          <li>Mejorar la productividad del desarrollador</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 style="text-align: center" data-transition="zoom" data-background-transition="convex">
+          CSS tradicional vs Tailwind
+        </h2>
+        <pre><code class="hljs language-css" data-trim>
 /* CSS tradicional */
 .card {
   background: white;
@@ -378,65 +371,65 @@
   border-radius: 0.5rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }</code></pre>
-          <pre><code class="hljs language-html" data-trim>
+        <pre><code class="hljs language-html" data-trim>
 <!-- HTML -->
 <div class="card">Contenido</div>
           </code></pre>
-          <pre><code class="hljs language-html" data-trim>
+        <pre><code class="hljs language-html" data-trim>
 <!-- Tailwind -->
 <div class="bg-white p-4 rounded shadow">Contenido</div>
           </code></pre>
+      </section>
+
+      <!-- Grupo principal de slides verticales -->
+      <section>
+        <!-- Slide padre (primera pantalla) -->
+        <section>
+          <h2 style="text-align: center">Proceso de instalación</h2>
+          <p style="text-align: justify">
+            Para usar Tailwind en un proyecto, lo ideal es integrarlo con
+            herramientas como Vite, Webpack o frameworks como React, Vue o
+            Next.js.
+          </p>
+          <p style="text-align: justify">
+            A continuación, se muestra un ejemplo de instalación y
+            configuración básica.
+          </p>
         </section>
 
-        <!-- Grupo principal de slides verticales -->
+        <!-- Slide hija (segunda pantalla - se desplaza hacia abajo) -->
         <section>
-          <!-- Slide padre (primera pantalla) -->
-          <section>
-            <h2 style="text-align: center">Proceso de instalación</h2>
-            <p style="text-align: justify">
-              Para usar Tailwind en un proyecto, lo ideal es integrarlo con
-              herramientas como Vite, Webpack o frameworks como React, Vue o
-              Next.js.
+          <h2 style="text-align: center; color: #fdfcfc">Requisitos:</h2>
+          <p style="text-align: justify">
+            Asegúrate de tener Node.js y un gestor de paquetes como npm o yarn
+            instalados.
+          </p>
+          <div class="concept-card">
+            <h3 style="text-align: center; color: #013341">
+              Instalación de Tailwind CSS:
+            </h3>
+            <p style="text-align: justify; color: black ; font-size: 2rem">
+              Ejecutar las siguientes instrucciones en la terminal de tu proyecto:
             </p>
-            <p style="text-align: justify">
-              A continuación, se muestra un ejemplo de instalación y
-              configuración básica.
-            </p>
-          </section>
-
-          <!-- Slide hija (segunda pantalla - se desplaza hacia abajo) -->
-          <section>
-            <h2 style="text-align: center; color: #fdfcfc">Requisitos:</h2>
-            <p style="text-align: justify">
-              Asegúrate de tener Node.js y un gestor de paquetes como npm o yarn
-              instalados.
-            </p>
-            <div class="concept-card">
-              <h3 style="text-align: center; color: #013341">
-                Instalación de Tailwind CSS:
-              </h3>
-              <p style="text-align: justify; color: black ; font-size: 2rem">
-                Ejecutar las siguientes instrucciones en la terminal de tu proyecto:
-              </p>
-              <pre><code class="language-bash">
+            <pre><code class="language-bash">
   npm install -D tailwindcss postcss autoprefixer
   npx tailwindcss init -p
         </code></pre>
-              <p style="text-align: left; color: black ; font-size: 2rem">
-                Esto crea los archivos de configuración:
-                <strong>tailwind.config.js</strong> y
-                <strong>postcss.config.js</strong>.
-              </p>
-            </div>
-          </section>
+            <p style="text-align: left; color: black ; font-size: 2rem">
+              Esto crea los archivos de configuración:
+              <strong>tailwind.config.js</strong> y
+              <strong>postcss.config.js</strong>.
+            </p>
+          </div>
+        </section>
 
-          <!-- Slide hija adicional (opcional) -->
-          <section>
-            <div class="concept-card">
-              <h3 style="text-align: center; color: #013341">
-                Configuración Base: tailwind.config.js
-              </h3>
-              <pre><code class="language-js">
+        <!-- Slide hija adicional (opcional) -->
+        <section>
+          <div class="concept-card">
+            <h3 style="text-align: center; color: #013341">
+              Configuración Base: tailwind.config.js
+            </h3>
+            <pre><code class="language-js">
   // tailwind.config.js
   /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -450,48 +443,52 @@ module.exports = {
   plugins: [],
 }
         </code></pre>
-              <span style="text-align: center; color: black; font-size: 1.3rem">
-                Archivo de configuración principal de Tailwind CSS. Define cómo
-                personalizar Tailwind en un proyecto. 
-                <span class="tooltip" tabindex="0">Contenido.
-                  <span class="tooltiptext">  
-                    <strong style="color: rgb(83, 252, 5);">/** @type {import('tailwindcss').Config} */:</strong> Es una anotación JSDoc
-      que proporciona información de tipos a los editores de código, permitiendo
-      autocompletado inteligente y verificación de tipos para la configuración de Tailwind.</br>                 
-                    <strong style="color: rgb(83, 252, 5);">content:</strong> Indica dónde buscar clases de Tailwind para generar el CSS final. 
-                    Si no se indica bien, ¡no se aplicarán estilos!</br>                
-                    <strong style="color: rgb(83, 252, 5);">theme:</strong> Permite personalizar el tema de Tailwind, como colores y fuentes.</br>
-                    <strong style="color: rgb(83, 252, 5);">plugins:</strong> Para añadir funcionalidades extra como formularios o tipografías.
-                  </span>
+            <span style="text-align: center; color: black; font-size: 1.3rem">
+              Archivo de configuración principal de Tailwind CSS. Define cómo
+              personalizar Tailwind en un proyecto.
+              <span class="tooltip" tabindex="0">Contenido.
+                <span class="tooltiptext">
+                  <strong style="color: rgb(83, 252, 5);">/** @type {import('tailwindcss').Config} */:</strong> Es una
+                  anotación JSDoc
+                  que proporciona información de tipos a los editores de código, permitiendo
+                  autocompletado inteligente y verificación de tipos para la configuración de Tailwind.</br>
+                  <strong style="color: rgb(83, 252, 5);">content:</strong> Indica dónde buscar clases de Tailwind para
+                  generar el CSS final.
+                  Si no se indica bien, ¡no se aplicarán estilos!</br>
+                  <strong style="color: rgb(83, 252, 5);">theme:</strong> Permite personalizar el tema de Tailwind, como
+                  colores y fuentes.</br>
+                  <strong style="color: rgb(83, 252, 5);">plugins:</strong> Para añadir funcionalidades extra como
+                  formularios o tipografías.
                 </span>
               </span>
-            
-              <p style="text-align: left; color: black; font-size: 1.3rem">
-                Archivo generado automáticamente con
-                <code><strong> tailwindcss init -p</strong></code>
-              </p>
-            </div>
-          </section>
-          <section>
-            <div class="concept-card">
-              <h2 style="text-align: center; color: #031e69">
-                Qué Hace?
-              </h2>
-              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
-                Personaliza Tailwind (colores, fuentes, etc).
-               <h2 style="text-align: center; color: #031e69">
-                Por qué es importante?
-              </h2>
-              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
-                Define qué clases incluir y cómo se ve el diseño.            
+            </span>
 
-          </section>
-          <section>
-            <div class="concept-card">
-              <h3 style="text-align: center; color: #013341">
-                Configuración necesaria: postcss.config.js
-              </h3>
-              <pre><code class="language-js">
+            <p style="text-align: left; color: black; font-size: 1.3rem">
+              Archivo generado automáticamente con
+              <code><strong> tailwindcss init -p</strong></code>
+            </p>
+          </div>
+        </section>
+        <section>
+          <div class="concept-card">
+            <h2 style="text-align: center; color: #031e69">
+              Qué Hace?
+            </h2>
+            <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+              Personaliza Tailwind (colores, fuentes, etc).
+            <h2 style="text-align: center; color: #031e69">
+              Por qué es importante?
+            </h2>
+            <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+              Define qué clases incluir y cómo se ve el diseño.
+
+        </section>
+        <section>
+          <div class="concept-card">
+            <h3 style="text-align: center; color: #013341">
+              Configuración necesaria: postcss.config.js
+            </h3>
+            <pre><code class="language-js">
   // postcss.config.js
   module.exports = {
   plugins: {
@@ -500,69 +497,73 @@ module.exports = {
   },
 }
         </code></pre>
-              <span style="text-align: center; color: black; font-size: 1.4rem">
-                Es el archivo que configura PostCSS, una herramienta que transforma el CSS con plugins. Tailwind usa esto para procesar su CSS. 
-                <span class="tooltip" tabindex="0">Contenido.
-                  <span class="tooltiptext">                    
-                    <strong style="color: rgb(83, 252, 5);">tailwindcss:</strong> Aplica la lógica de Tailwind para generar utilidades.</br>                
-                    <strong style="color: rgb(83, 252, 5);">autoprefixer:</strong> Añade automáticamente los prefijos necesarios para compatibilidad con</br>  
-                    distintos navegadores (como -webkit-, -moz-, etc).                 
-                  </span>
+            <span style="text-align: center; color: black; font-size: 1.4rem">
+              Es el archivo que configura PostCSS, una herramienta que transforma el CSS con plugins. Tailwind usa esto
+              para procesar su CSS.
+              <span class="tooltip" tabindex="0">Contenido.
+                <span class="tooltiptext">
+                  <strong style="color: rgb(83, 252, 5);">tailwindcss:</strong> Aplica la lógica de Tailwind para
+                  generar utilidades.</br>
+                  <strong style="color: rgb(83, 252, 5);">autoprefixer:</strong> Añade automáticamente los prefijos
+                  necesarios para compatibilidad con</br>
+                  distintos navegadores (como -webkit-, -moz-, etc).
                 </span>
               </span>
-            
-              <p style="text-align: left; color: black; font-size: 1.4rem">
-                Archivo generado automáticamente con
-                <code><strong> tailwindcss init -p</strong></code></br>
-                <strong>-p</strong> significa que incluye la configuración de PostCSS 
-                además de la de Tailwind. </br>Es un atajo que hace dos cosas al mismo tiempo:</br>
-                1. Crea el archivo tailwind.config.js con una configuración base.</br>
-                2. Crea el archivo postcss.config.js con la configuración necesaria para usar Tailwind como plugin de PostCSS.
-              </p>
-            </div>
-          </section>
-          <section>
-            <div class="concept-card">
-              <h2 style="text-align: center; color: #031e69">
-                Qué Hace?
-              </h2>
-              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
-                Usa Tailwind como plugin de PostCSS + autoprefixer
-               <h2 style="text-align: center; color: #031e69">
-                Por qué es importante?
-              </h2>
-              <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
-                Hace que el CSS funcione bien en todos los navegadores.            
+            </span>
 
-          </section>
-        </section>  
-
-
+            <p style="text-align: left; color: black; font-size: 1.4rem">
+              Archivo generado automáticamente con
+              <code><strong> tailwindcss init -p</strong></code></br>
+              <strong>-p</strong> significa que incluye la configuración de PostCSS
+              además de la de Tailwind. </br>Es un atajo que hace dos cosas al mismo tiempo:</br>
+              1. Crea el archivo tailwind.config.js con una configuración base.</br>
+              2. Crea el archivo postcss.config.js con la configuración necesaria para usar Tailwind como plugin de
+              PostCSS.
+            </p>
+          </div>
+        </section>
         <section>
-         <h2 style="text-align: center"> Estructuración</h2>
-          <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
-            En un proyecto típico con Tailwind, la estructura suele ser:
-          </p>
-          <pre><code class="hljs language-bash" data-trim>
+          <div class="concept-card">
+            <h2 style="text-align: center; color: #031e69">
+              Qué Hace?
+            </h2>
+            <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+              Usa Tailwind como plugin de PostCSS + autoprefixer
+            <h2 style="text-align: center; color: #031e69">
+              Por qué es importante?
+            </h2>
+            <p class="fragment" style="color: #013341; font-size: 2rem; text-align: center">
+              Hace que el CSS funcione bien en todos los navegadores.
+
+        </section>
+      </section>
+
+
+      <section>
+        <h2 style="text-align: center"> Estructuración</h2>
+        <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
+          En un proyecto típico con Tailwind, la estructura suele ser:
+        </p>
+        <pre><code class="hljs language-bash" data-trim>
 /src
   └── index.css  ← Aquí las directivas de Tailwind
   └── App.jsx    ← Componentes (React, por ejemplo)
 tailwind.config.js
           </code></pre>
-          <h3 style="text-align: center">Archivo CSS base:</h3>
-          <pre><code class="hljs language-css" data-trim>   
+        <h3 style="text-align: center">Archivo CSS base:</h3>
+        <pre><code class="hljs language-css" data-trim>   
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
           </code></pre>
-        </section>  
+      </section>
 
-        <section>
-          <h1 style="text-align: center">Sintaxis</h1>
-            <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
-                Tailwind utiliza clases semánticas y de propósito único. Cada clase representa una única propiedad de estilo.
-            </p>   
-            <pre><code class="hljs language-html"; style="color: rgb(9, 225, 233); text-align: center;" data-trim> 
+      <section>
+        <h1 style="text-align: center">Sintaxis</h1>
+        <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
+          Tailwind utiliza clases semánticas y de propósito único. Cada clase representa una única propiedad de estilo.
+        </p>
+        <pre><code class="hljs language-html"; style="color: rgb(9, 225, 233); text-align: center;" data-trim> 
                         | Propiedad             | Clase de Tailwind       |
                         | ----------------------|------------------------ |
                         | Color de fondo blanco | `bg-white`              |
@@ -575,15 +576,15 @@ tailwind.config.js
                         | Ancho completo        | `w-full`                |
                         | Altura 100px          | `h-24`                  |
          </code></pre>
-         <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
-        Puedes combinarlas directamente en el className del HTML.
-        </p>       
-        </section>  
-          
+        <p style="text-align: center; color: rgb(250, 249, 249) ; font-size: 2rem">
+          Puedes combinarlas directamente en el className del HTML.
+        </p>
+      </section>
 
-        <section>
-          <h1 style="text-align: center;"> Ejemplo </h1>        
-          <pre><code class="hljs language-html" data-trim>
+
+      <section>
+        <h1 style="text-align: center;"> Ejemplo </h1>
+        <pre><code class="hljs language-html" data-trim>
 <form class="max-w-md mx-auto p-4 border rounded shadow space-y-4">
   <input
     type="text"
@@ -595,125 +596,131 @@ tailwind.config.js
   </button>
 </form>
           </code></pre>
-            <div class="two-columns">
-              <div>
-                <h5 style="color:rgb(255, 230, 0); text-align: center;">Ventajas:</h5>
-                  <ul>
-                    <li style="font-size: 1.5rem;">Rápido y fácil de usar.</li>
-                    <li style="font-size: 1.5rem;">Visualmente atractivo sin escribir CSS extra.</li>
-                    <li style="font-size: 1.5rem;">Responsivo y modificable rápidamente desde HTML.</li>
-                    <li style="font-size: 1.5rem;">Ideal para prototipado y desarrollo ágil.</li>
-                  </ul>
-              </div>
-              <div>
-                <h5 style="color:rgb(255, 230, 0); text-align: center;">Desventajas:</h5>
-                  <ul>
-                    <li style="font-size: 1.5rem;">Puede volverse desordenado con muchas clases.</li>
-                    <li style="font-size: 1.5rem;">Requiere tiempo para aprender la sintaxis.</li>
-                    <li style="font-size: 1.5rem;">Puede aumentar el tamaño del archivo CSS si no se configura correctamente.</li>
-                  </ul>
-              </div>
-            </div>
-        </section>
-        <section>
-  <h2>¿Volver al inicio?</h2>
-  <button onclick="Reveal.slide(1, 1)" 
+        <div class="two-columns">
+          <div>
+            <h5 style="color:rgb(255, 230, 0); text-align: center;">Ventajas:</h5>
+            <ul>
+              <li style="font-size: 1.5rem;">Rápido y fácil de usar.</li>
+              <li style="font-size: 1.5rem;">Visualmente atractivo sin escribir CSS extra.</li>
+              <li style="font-size: 1.5rem;">Responsivo y modificable rápidamente desde HTML.</li>
+              <li style="font-size: 1.5rem;">Ideal para prototipado y desarrollo ágil.</li>
+            </ul>
+          </div>
+          <div>
+            <h5 style="color:rgb(255, 230, 0); text-align: center;">Desventajas:</h5>
+            <ul>
+              <li style="font-size: 1.5rem;">Puede volverse desordenado con muchas clases.</li>
+              <li style="font-size: 1.5rem;">Requiere tiempo para aprender la sintaxis.</li>
+              <li style="font-size: 1.5rem;">Puede aumentar el tamaño del archivo CSS si no se configura correctamente.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>¿Volver al inicio?</h2>
+        <button onclick="Reveal.slide(1, 1)"
           style="padding: 10px 20px; background: #013341; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    Click para reiniciar
-  </button>
-</section>
+          Click para reiniciar
+        </button>
+      </section>
 
-        <!-- Tema 2: Componentes -->
-        <section data-background="#ffffff" id="patrones-section" data-transition="concave" data-background-transition="slide">
-          <h1 style="text-align: center;">Patrones de Componentes</h1>
-          <p style="text-align: justify; font-size: 2rem;">
-           Son las partes principales y reutilizables que forman una aplicación web hecha con React. </p>
-          <p class="fragment" style="text-align: justify; font-size: 2rem;">
-            Los patrones de componentes como 
-            <span class="tooltip" tabindex="0">
-              props, children y composición
-              <span class="tooltiptext" style="font-size: 1.8rem" >
-                <b style="color: #fbfd8c; font-size: 1.8rem">props:</b> permiten pasar datos a un componente.  <br> 
-                <b style="color: #fbfd8c; font-size: 1.8rem">children:</b> permiten incluir contenido dinámico dentro del <br>  componente.<br>
-                <b style="color: #fbfd8c; font-size: 1.8rem">composición:</b> permite agrupar componentes para formar <br> estructuras más complejas </b>
-              </span>
+      <!-- Tema 2: Componentes -->
+      <section data-background="#ffffff" id="patrones-section" data-transition="concave"
+        data-background-transition="slide">
+        <h1 style="text-align: center;">Patrones de Componentes</h1>
+        <p style="text-align: justify; font-size: 2rem;">
+          Son las partes principales y reutilizables que forman una aplicación web hecha con React. </p>
+        <p class="fragment" style="text-align: justify; font-size: 2rem;">
+          Los patrones de componentes como
+          <span class="tooltip" tabindex="0">
+            props, children y composición
+            <span class="tooltiptext" style="font-size: 1.8rem">
+              <b style="color: #fbfd8c; font-size: 1.8rem">props:</b> permiten pasar datos a un componente. <br>
+              <b style="color: #fbfd8c; font-size: 1.8rem">children:</b> permiten incluir contenido dinámico dentro del
+              <br> componente.<br>
+              <b style="color: #fbfd8c; font-size: 1.8rem">composición:</b> permite agrupar componentes para formar <br>
+              estructuras más complejas </b>
             </span>
-          </b> son las formas recomendadas de estructurar y reutilizar estas partes de forma clara, flexible y mantenible.</p>
-          </section>
+          </span>
+          </b> son las formas recomendadas de estructurar y reutilizar estas partes de forma clara, flexible y
+          mantenible.
+        </p>
+      </section>
 
-        
-        <!-- Slide 2: Componentes -->
-        <section data-background="#ffffff">
-          <h2 style="margin-bottom: 50px;text-align: center;">Desarrollo con Componentes<br></h2>
-          <h4 style="text-align: center;"><strong>Como construir un coche</strong> </h4>
-          <p style="text-align: justify; font-size: 1.7rem; color: rgb(3, 1, 77);">
-            <br>Cada parte es un componente: el volante, las ruedas, los asientos, el motor, etc.
-            Cada parte tiene su propia función y puede ser ensamblada para formar el coche completo.
-          </p>
-          <div class="car-analogy">      
-            <!-- Fragmentos para animar los componentes -->
-            <span class="fragment" data-component-index="0"></span>
-            <span class="fragment" data-component-index="1"></span>
-            <span class="fragment" data-component-index="2"></span>
-            <span class="fragment" data-component-index="3"></span>
-            <span class="fragment" data-component-index="4"></span>
-                        
-            <!-- Componentes reales de un coche -->
-            <div id="steering-wheel" class="car-component">
-              <img src="./examples/assets/steering-wheel_391252.png" alt="Volante">
-              <div class="component-info">
-                <p class="component-name">Volante</p>
-                <p class="component-code">ComponenteVolante.jsx</p>
-              </div>
-            </div>
-            
-            <div id="wheels" class="car-component">
-              <img src="./examples/assets/wheel_2137841.png" alt="Ruedas">
-              <div class="component-info">
-                <p class="component-name">Ruedas</p>
-                <p class="component-code">ComponenteRuedas.tsx</p>
-              </div>
-            </div>
-            
-            <div id="seats" class="car-component">
-              <img src="./examples/assets/car-chair_6332017.png" alt="Asientos">
-              <div class="component-info">
-                <p class="component-name">Asientos</p>
-                <p class="component-code">ComponenteAsientos.vue</p>
-              </div>
-            </div>
-            
-            <div id="engine" class="car-component">
-              <img src="./examples/assets/engine_10146173.png" alt="Motor">
-              <div class="component-info">
-                <p class="component-name">Motor</p>
-                <p class="component-code">ComponenteMotor.svelte</p>
-              </div>
-            </div>
-            
-            <!-- Coche completo -->
-            <div id="full-car" class="car-component">
-              <img src="./examples/assets/transport_14969814.png" alt="Coche completo">
-              <div class="component-info">
-                <p style="text-align: center;" class="component-name">Coche</p>
-                <p class="component-code">Coche.js</p>
-              </div>
-            </div>
-          </div>          
-        </section>
 
-        <section data-background="#ffffff">
-          <h1 style="text-align: center;">¿Para qué sirven?</h1>
-          <ul>
-            <li>Organizar código en partes pequeñas.</li>
-            <li>Hacer que las aplicaciones sean más fáciles de mantener.</li>
-            <li>Construir interfaces dinámicas y reutilizables.</li>
-          </ul>
-        </section>       
+      <!-- Slide 2: Componentes -->
+      <section data-background="#ffffff">
+        <h2 style="margin-bottom: 50px;text-align: center;">Desarrollo con Componentes<br></h2>
+        <h4 style="text-align: center;"><strong>Como construir un coche</strong> </h4>
+        <p style="text-align: justify; font-size: 1.7rem; color: rgb(3, 1, 77);">
+          <br>Cada parte es un componente: el volante, las ruedas, los asientos, el motor, etc.
+          Cada parte tiene su propia función y puede ser ensamblada para formar el coche completo.
+        </p>
+        <div class="car-analogy">
+          <!-- Fragmentos para animar los componentes -->
+          <span class="fragment" data-component-index="0"></span>
+          <span class="fragment" data-component-index="1"></span>
+          <span class="fragment" data-component-index="2"></span>
+          <span class="fragment" data-component-index="3"></span>
+          <span class="fragment" data-component-index="4"></span>
 
-        <section data-background="#ffffff">                 
-              <h1 style="text-align: center;">Sintaxis</h1>
-              <pre><code class="language-jsx">import React from 'react';
+          <!-- Componentes reales de un coche -->
+          <div id="steering-wheel" class="car-component">
+            <img src="./examples/assets/steering-wheel_391252.png" alt="Volante">
+            <div class="component-info">
+              <p class="component-name">Volante</p>
+              <p class="component-code">ComponenteVolante.jsx</p>
+            </div>
+          </div>
+
+          <div id="wheels" class="car-component">
+            <img src="./examples/assets/wheel_2137841.png" alt="Ruedas">
+            <div class="component-info">
+              <p class="component-name">Ruedas</p>
+              <p class="component-code">ComponenteRuedas.tsx</p>
+            </div>
+          </div>
+
+          <div id="seats" class="car-component">
+            <img src="./examples/assets/car-chair_6332017.png" alt="Asientos">
+            <div class="component-info">
+              <p class="component-name">Asientos</p>
+              <p class="component-code">ComponenteAsientos.vue</p>
+            </div>
+          </div>
+
+          <div id="engine" class="car-component">
+            <img src="./examples/assets/engine_10146173.png" alt="Motor">
+            <div class="component-info">
+              <p class="component-name">Motor</p>
+              <p class="component-code">ComponenteMotor.svelte</p>
+            </div>
+          </div>
+
+          <!-- Coche completo -->
+          <div id="full-car" class="car-component">
+            <img src="./examples/assets/transport_14969814.png" alt="Coche completo">
+            <div class="component-info">
+              <p style="text-align: center;" class="component-name">Coche</p>
+              <p class="component-code">Coche.js</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-background="#ffffff">
+        <h1 style="text-align: center;">¿Para qué sirven?</h1>
+        <ul>
+          <li>Organizar código en partes pequeñas.</li>
+          <li>Hacer que las aplicaciones sean más fáciles de mantener.</li>
+          <li>Construir interfaces dinámicas y reutilizables.</li>
+        </ul>
+      </section>
+
+      <section data-background="#ffffff">
+        <h1 style="text-align: center;">Sintaxis</h1>
+        <pre><code class="language-jsx">import React from 'react';
 
 const Card = ({ title, children }) => (
   <div className="p-4 border rounded shadow">
@@ -727,66 +734,66 @@ const Card = ({ title, children }) => (
   <p>Contenido interno personalizado</p>
 </Card>
 
-</code></pre>            
-        </section>
+</code></pre>
+      </section>
 
-        <section data-background="#ffffff">
-          <h2 style="text-align: center;">Comparación rápida</h2>
+      <section data-background="#ffffff">
+        <h2 style="text-align: center;">Comparación rápida</h2>
 
-          <style>
-            .concept-table {
-              width: 85%;
-              margin: 30px auto;
-              border-collapse: separate;
-              border-spacing: 0;
-              background: white;
-              border-radius: 12px;
-              overflow: hidden;
-              box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-              opacity: 0;
-              transform: translateY(30px);
-              transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-            
-            .concept-table.visible {
-              opacity: 1;
-              transform: translateY(0);
-            }
-            
-            .concept-table th {
-              background: #013341;
-              color: white;
-              padding: 15px;
-              text-align: left;
-              font-weight: 600;
-            }
-            
-            .concept-table td {
-              padding: 15px;
-              border-bottom: 1px solid #e9ecef;
-              vertical-align: top;
-            }
-            
-            .concept-table tr:last-child td {
-              border-bottom: none;
-            }
-            
-            .concept-table tr:nth-child(even) {
-              background-color: #f8f9fa;
-            }
-            
-            .code-example {
-              font-family: 'Fira Code', monospace;
-              background: #f1f3f5;
-              padding: 8px 12px;
-              border-radius: 6px;
-              color: #d6336c;
-              font-size: 0.9em;
-              display: inline-block;
-              margin: 5px 0;
-              line-height: 1.4;
-            }
-          </style>
+        <style>
+          .concept-table {
+            width: 85%;
+            margin: 30px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          }
+
+          .concept-table.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          .concept-table th {
+            background: #013341;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+          }
+
+          .concept-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: top;
+          }
+
+          .concept-table tr:last-child td {
+            border-bottom: none;
+          }
+
+          .concept-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+          }
+
+          .code-example {
+            font-family: 'Fira Code', monospace;
+            background: #f1f3f5;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #d6336c;
+            font-size: 0.9em;
+            display: inline-block;
+            margin: 5px 0;
+            line-height: 1.4;
+          }
+        </style>
 
 
         <table class="concept-table">
@@ -800,160 +807,330 @@ const Card = ({ title, children }) => (
           <tbody>
             <tr>
               <td style="color: #031e69; text-align: center;"><strong>props</strong></td>
-              <td  style="color: #031e69; text-align: left; font-size: 1.8rem";>Datos que mandas al componente</td>
-              <td><pre class="code-example">&lt;Boton texto="Enviar" color="rojo" /&gt;</pre></td>
+              <td style="color: #031e69; text-align: left; font-size: 1.8rem" ;>Datos que mandas al componente</td>
+              <td>
+                <pre class="code-example">&lt;Boton texto="Enviar" color="rojo" /&gt;</pre>
+              </td>
             </tr>
             <tr>
               <td style="color: #031e69; text-align: center;"><strong>children</strong></td>
-              <td style="color: #031e69; text-align: left; font-size: 1.8rem";>El contenido interno entre las etiquetas</td>
-              <td><pre class="code-example">&lt;Caja&gt;&lt;p&gt;Hola&lt;/p&gt;&lt;/Caja&gt;</pre></td>
+              <td style="color: #031e69; text-align: left; font-size: 1.8rem" ;>El contenido interno entre las etiquetas
+              </td>
+              <td>
+                <pre class="code-example">&lt;Caja&gt;&lt;p&gt;Hola&lt;/p&gt;&lt;/Caja&gt;</pre>
+              </td>
             </tr>
           </tbody>
         </table>
-        </section>  
+      </section>
 
-        <section data-background="#ffffff">
-          <h1 style="text-align: center;">Casos de Uso</h1>
+      <section data-background="#ffffff">
+        <h1 style="text-align: center;">Casos de Uso</h1>
+        <ul>
+          <li class="fragment" style="text-align: justify;">Botones con comportamiento dinámico</li>
+          <li class="fragment" style="text-align: justify;">Layouts: Header + Sidebar + Content</li>
+          <li class="fragment" style="text-align: justify;">Formularios reutilizables</li>
+          <li class="fragment" style="text-align: justify;">Modales, tooltips, dropdowns</li>
+        </ul>
+      </section>
+
+      <section data-background="#ffffff">
+        <h2>¿Volver al inicio?</h2>
+        <button onclick="Reveal.slide(1, 1)"
+          style="padding: 10px 20px; background: #013341; color: white; border: none; border-radius: 5px; cursor: pointer;">
+          Click para reiniciar
+        </button>
+      </section>
+
+      <!-- Tema 3: Testing -->
+      
+<section id="testing-section" data-auto-animate>
+  <div class="two-columns">
+    <div class="left-column">
+      <h1 style="text-align: center; color: #fdfcfc; font-size: 5rem">Testing  🧪</h1>
+      <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
+        Proceso utilizado para asegurar que los componentes funcionen correctamente antes, durante y después del
+        desarrollo.
+      </p>
+    </div>
+    <div class="right-column">
+      <h1 style="text-align: center; color: #fdfcfc; font-size: 5rem"> Para qué Sirve? </h1>
+        <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
           <ul>
-            <li class="fragment" style="text-align: justify;">Botones con comportamiento dinámico</li>
-            <li class="fragment" style="text-align: justify;">Layouts: Header + Sidebar + Content</li>
-            <li class="fragment" style="text-align: justify;">Formularios reutilizables</li>
-            <li class="fragment" style="text-align: justify;">Modales, tooltips, dropdowns</li>
-          </ul>
-        </section>
+            <li class="fragment" style="color:#fdfcfc; font-size: 1.8rem">Detectar errores antes de que lleguen a producción</li>
+            <li class="fragment" style="color:#fdfcfc; font-size: 1.8rem">Mejorar la calidad del código</li>
+            <li class="fragment" style="color:#fdfcfc; font-size: 1.8rem">Facilitar el mantenimiento y la evolución del software</li>
+            <li class="fragment" style="color:#fdfcfc; font-size: 1.8rem">Mejorar la confianza en el código</li>
+          </ul> 
+        </p>
+    <aside class="notes">
+    📌 **Qué es el testing**: Enfoque: Concepto / Definición.
+    <br>📌 ** Para qué sirve**: Enfoque: Propósito / Beneficio
+    </aside>
+  
+</section>
 
-              
+<section>
+  <h2 style="text-align: center; color: #fdfcfc; font-size: 5rem">Tipos de Testing</h2>
+  <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
+    Existen diferentes tipos de pruebas que se pueden realizar en una aplicación. Aquí hay una tabla con los tipos
+    más comunes:
+  </p>
+  <table class="concept-table">
+    <thead>
+      <tr>
+        <th style="font-size: 2rem; text-align: center;">Test</th>
+        <th style="font-size: 2rem; text-align: center;">Qué verifica</th>
+        <th style="font-size: 2rem; text-align: center;">Htas. comunes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-size: 1.8rem; color: #001b36; text-align: center;">Unitario (unit)</td>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Funciones/componentes individuales</td>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Vitest, Jest</td>
+      </tr>
+      <tr>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Integración</td>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Cómo interactúan componentes entre sí</td>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Testing Library</td>
+      </tr>
+      <tr>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;" >E2E (End-to-End)</td>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Flujo completo del usuario</td>
+        <td style="font-size: 1.8rem; color: #001b36;  text-align: center;">Cypress, Playwright</td>
+      </tr>
+    </tbody>
+  </table>
 
-               
-        <!-- Tema 3: Testing -->
-        <section>
-          <h2>Tema 3: Testing</h2>
-        </section>
+  <aside class="notes">
+    📌 **E2E (End-to-End)**: Opciones E2E para pruebas reales de flujo completo (login, navegación, errores, etc.).
+    </aside>  
 
-        <section>
-          <h3>¿Qué es el Testing?</h3>
-          <p>
-            Proceso para asegurar que los componentes funcionen correctamente.
-            Evita errores en producción.
-          </p>
-        </section>
+  </section>
+      <section>
+        <h2 style="text-align: center;"> ⚙️ Herramientas necesarias</h2>
+        <br>
+         <pre><code class="hljs language-html"; style="color: rgb(234, 238, 238); text-align: center;" data-trim> 
+        |         HERRAMIENTA        |                 ROL                   |
+        |----------------------------|---------------------------------------|
+        | Vitest                     | Motor de pruebas, rápido y moderno    |
+        | @testing-library/react     | Renderiza componentes y accede al DOM |
+        | @testing-library/user-event| Simula interacciones del usuario      |
+        | @testing-library/jest-dom  | Extiende los matchers de expect()     |
+        </code></pre>
+        
+<h3 style="text-align: center;"> 📦 Instalación</h3>
+<pre><code class="hljs language-bash" data-trim>
+npm install -D vitest @testing-library/react @testing-library/user-event @testing-library/jest-dom
+          </code></pre>        
+      </section>
 
-        <section>
-          <h3>Instalación y Herramientas</h3>
-          <pre><code class="hljs language-bash" data-trim>
-npm install -D vitest @testing-library/react @testing-library/user-event
-          </code></pre>
-        </section>
+      <section>
+        <h3 style="text-align: center;">🗂 Archivos de configuración</h3>
+        <p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
+          - vite.config.js
+        </p>
+        <pre><code class="hljs language-bash" data-trim>
+import { defineConfig } from 'vite';
 
-        <section>
-          <h3>Tipos de Pruebas</h3>
-          <ul>
-            <li>Unitarias</li>
-            <li>Integración</li>
-            <li>E2E (End-to-End)</li>
-          </ul>
-        </section>
+export default defineConfig({
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js'
+  }
+});   </code></pre>  
+<p style="text-align: justify; color: #fdfcfc; font-size: 2rem">
+          - src/setupTests.js
+        </p>
+        <pre><code class="hljs language-bash" data-trim>
+import '@testing-library/jest-dom';
+      </code></pre>
+      <P style="text-align: left; color: #fdfcfc; font-size: 1.8rem"> Permite usar métodos como toBeInTheDocument(), toHaveTextContent(), etc.</P>
+      </section>
 
-        <section>
-          <h3>Ejemplo: Testing con React</h3>
-          <pre><code class="hljs language-js" data-trim>
+      <section>
+        <h2 style="text-align: center;"> 📘 Librerías de Testing</h2>
+        <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
+          <strong>✅ Vitest</strong><br>
+            * Reemplazo moderno y más rápido de Jest.<br>
+            * Compatible con ESM y proyectos Vite.<br>
+            * Sintaxis similar a Jest: describe, it, expect.<br>
+        </p>  
+        <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
+          <strong>✅ @testing-library/react</strong><br>
+            * Ayuda a renderizar componentes en un entorno de test.<br>
+            * Promueve el uso de consultas accesibles como getByRole, getByLabelText.<br>
+        </p>
+        <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
+          <strong>✅ @testing-library/user-event</strong><br>
+            * Simula interacciones como un usuario real: clics, escritura, selección.<br>
+            * Sustituye fireEvent por una experiencia más realista.<br>
+        </p>
+        <p class="fragment" style="text-align: center; color: #fdfcfc; font-size: 1.7rem">
+          <strong>✅ @testing-library/jest-dom</strong><br>
+            * Extiende expect con matchers útiles:<br>
+              - toBeInTheDocument()<br>
+              - toHaveTextContent()<br>
+              - toBeDisabled(), etc.
+        </p>
+        <aside class="notes">
+    📌 **Qué es matchers**: métodos o funciones que se utilizan para comparar el resultado real de una prueba con el resultado esperado, definiendo así las condiciones que debe cumplir el 
+                            código para que el test se considere exitoso.
+    </aside>  
+
+    
+    </section>  
+
+    <section>
+      <h3 style="text-align: center;">🧪 Prueba Render de un componente</h3>
+      <pre><code class="hljs language-js" data-trim>
+import { render, screen } from '@testing-library/react';
+import Counter from './Counter';
+
+test('muestra el contador inicial en 0', () => {
+  render(<Counter />);
+  expect(screen.getByRole('button')).toHaveTextContent('Clicks: 0');
+});</code></pre>
+      <p style="font-size: 2.2rem; text-align: center;">1. Importa las funciones necesarias de la librería.</p>
+      <p style="font-size: 2.2rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
+      <p style="font-size: 2.2rem; text-align: center;">3. Verifica que el texto del botón sea "Clicks: 0".</p>
+    </section>
+
+    <section>
+      <h3 style="text-align: center;">🧪 Prueba Interacción con el usuario</h3>
+      <pre><code class="hljs language-js" data-trim>
+import userEvent from '@testing-library/user-event';
+
+test('incrementa el contador al hacer clic', async () => {
+  render(<Counter />);
+  const button = screen.getByRole('button');
+  await userEvent.click(button);
+  expect(button).toHaveTextContent('Clicks: 1');
+});
+</code></pre>
+    <p style="font-size: 2rem; text-align: center;">1. Importa las funciones necesarias de la librería.</p>
+    <p style="font-size: 2rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
+    <p style="font-size: 2rem; text-align: center;">3. Simula un clic en el botón.</p>
+    <p style="font-size: 2rem; text-align: center;">4. Verifica que el texto del botón haya cambiado a "Clicks: 1".</p>
+   </section>
+
+   <section>
+      <h3 style="text-align: center;">🧪 Prueba Interacción con formulario</h3>
+      <pre><code class="hljs language-js" data-trim>
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Button from './Button';
+import { vi } from 'vitest'; 
+import LoginForm from './LoginForm'; 
 
-test('click button', async () => {
-  const onClick = vi.fn();
-  render(<Button onClick={onClick}>Click me</Button>);
-  await userEvent.click(screen.getByText('Click me'));
-  expect(onClick).toHaveBeenCalled();
+test('envía datos de email y password', async () => {
+  const onSubmit = vi.fn();
+
+  render(<LoginForm onSubmit={onSubmit} />);
+
+  await userEvent.type(screen.getByLabelText(/email/i), 'correo@prueba.com');
+  await userEvent.type(screen.getByLabelText(/password/i), '123456');
+  await userEvent.click(screen.getByRole('button', { name: /login/i }));
+
+  expect(onSubmit).toHaveBeenCalledWith({
+    email: 'correo@prueba.com',
+    password: '123456',
+  });
 });
-          </code></pre>
-        </section>
+</code></pre>
+<p style="font-size: 1.3rem; text-align: center;">1. Importa las funciones necesarias de la librería.</p> 
+<p style="font-size: 1.3rem; text-align: center;">2. Renderiza el componente en un entorno de prueba.</p>
+<p style="font-size: 1.3rem; text-align: center;">3. Simula la escritura en los campos de email, password y clic en el botón de login.</p>  
+<p style="font-size: 1.3rem; text-align: center;">4. Verifica que la función onSubmit haya sido llamada con los datos correctos.</p>
+   </section>
 
-        <section>
-          <h3>Cobertura de Tests</h3>
-          <p>¿Qué tanto del código ha sido probado?</p>
-          <pre><code class="hljs language-bash" data-trim>
+        
+    <section>
+      <h3>Cobertura de Tests</h3>
+      <p>¿Qué tanto del código ha sido probado?</p>
+      <pre><code class="hljs language-bash" data-trim>
 npx vitest --coverage
-          </code></pre>
-          <p>Resultados: statements, branches, functions, lines</p>
-        </section>
+        </code></pre>
+      <p>Resultados: statements, branches, functions, lines</p>
+    </section>
 
-        <section>
-          <h2>¡Gracias!</h2>
-          <p>Dudas, comentarios y ejercicios ahora 📣</p>
-        </section>
-      </div>
+      <section>
+        <h2>¡Gracias!</h2>
+        <p>Dudas, comentarios y ejercicios ahora 📣</p>
+      </section>
     </div>
-    <script src="./plugin/highlight/highlight.js"></script>
-    <script src="./dist/reveal.js"></script>
-    <script>
-      Reveal.initialize({
-        hash: true,
-        previewLinks: false,
-        slideNumber: true,
-        transition: "convex",
-        backgroundTransition: "slide",
-        plugins: [RevealHighlight],
-      });
-    </script>
+  </div>
+  <script src="./plugin/highlight/highlight.js"></script>
+  <script src="./dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      previewLinks: false,
+      slideNumber: true,
+      transition: "convex",
+      backgroundTransition: "slide",
+      plugins: [RevealHighlight],
+      showNotes: window.location.search.match(/showNotes=true/gi),
+    });
+  </script>
 
-    <script>
-        Reveal.addEventListener('ready', function() {
-          const sequence = [
-            { element: document.getElementById('steering-wheel'), line: false },
-            { element: document.getElementById('wheels'), line: false },
-            { element: document.getElementById('seats'), line: false },
-            { element: document.getElementById('engine'), line: true },
-            { element: document.getElementById('full-car'), line: true }
-          ];
-      
-        Reveal.addEventListener('fragmentshown', function(event) {
-          const index = event.fragment.dataset.componentIndex;
-          if (index >= 0 && sequence[index]) {
-            sequence[index].element.classList.add('visible');
-            if (sequence[index].line) {
-              document.querySelector('.assembly-line').classList.add('visible');
-            }
+  <script>
+    Reveal.addEventListener('ready', function () {
+      const sequence = [
+        { element: document.getElementById('steering-wheel'), line: false },
+        { element: document.getElementById('wheels'), line: false },
+        { element: document.getElementById('seats'), line: false },
+        { element: document.getElementById('engine'), line: true },
+        { element: document.getElementById('full-car'), line: true }
+      ];
+
+      Reveal.addEventListener('fragmentshown', function (event) {
+        const index = event.fragment.dataset.componentIndex;
+        if (index >= 0 && sequence[index]) {
+          sequence[index].element.classList.add('visible');
+          if (sequence[index].line) {
+            document.querySelector('.assembly-line').classList.add('visible');
           }
-        });
-    
-        Reveal.addEventListener('fragmenthidden', function(event) {
-          const index = event.fragment.dataset.componentIndex;
-          if (index >= 0 && sequence[index]) {
-            sequence[index].element.classList.remove('visible');
-            if (index === sequence.length - 1) {
-              document.querySelector('.assembly-line').classList.remove('visible');
-            }
-          }
-        });
+        }
       });
-    </script>
-    <script>
+
+      Reveal.addEventListener('fragmenthidden', function (event) {
+        const index = event.fragment.dataset.componentIndex;
+        if (index >= 0 && sequence[index]) {
+          sequence[index].element.classList.remove('visible');
+          if (index === sequence.length - 1) {
+            document.querySelector('.assembly-line').classList.remove('visible');
+          }
+        }
+      });
+    });
+  </script>
+  <script>
     // Animación para la tabla
-    Reveal.addEventListener('slidechanged', function(event) {
+    Reveal.addEventListener('slidechanged', function (event) {
       const currentSlide = event.currentSlide;
       const table = currentSlide.querySelector('.concept-table');
-      
+
       if (table) {
         setTimeout(() => {
           table.classList.add('visible');
         }, 300);
       }
     });
-    </script>
-    <script>
-      // Animación para los componentes
-      const components = document.querySelectorAll('.car-component');
-      components.forEach((component, index) => {
-        component.style.animationDelay = `${index * 0.2}s`;
-        component.classList.add('component-animation');
-      });
-    </script>
-    <script>
-      // Animación para la línea de ensamblaje
-      const assemblyLine = document.querySelector('.assembly-line');
-      assemblyLine.classList.add('car-assembly');
-    </script>
-  </body>
+  </script>
+  <script>
+    // Animación para los componentes
+    const components = document.querySelectorAll('.car-component');
+    components.forEach((component, index) => {
+      component.style.animationDelay = `${index * 0.2}s`;
+      component.classList.add('component-animation');
+    });
+  </script>
+  <script>
+    // Animación para la línea de ensamblaje
+    const assemblyLine = document.querySelector('.assembly-line');
+    assemblyLine.classList.add('car-assembly');
+  </script>
+</body>
+
 </html>
