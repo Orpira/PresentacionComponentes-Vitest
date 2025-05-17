@@ -132,19 +132,6 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <!-- Título -->
-
-        <section>
-          <div style="text-align: center">
-            <h1>Componentes + Vitest</h1>
-            <h3>React + Tailwind CSS + Vitest</h3>
-            <div style="margin-top: 40px">
-              <span class="tech-badge"><a href="#/tailwind-section">Tailwind CSS</a></span>
-              <span class="tech-badge"><a href="#/patrones-section">Patrones de Componentes</a></span>
-              <span class="tech-badge">Testing-Library</span>
-            </div>
-          </div>
-        </section>
 
         <section data-background="#1a1a2e" data-transition="zoom">
           <!-- Fondo oscuro elegante + transición de zoom -->
@@ -153,7 +140,7 @@
           >
             <!-- Logo de React -->
             <div style="margin-bottom: 20px">
-              <img src="react.png" width="100" />
+              <img src="./examples/assets/react.png" width="100" />
             </div>
 
             <!-- Título con gradiente -->
@@ -196,7 +183,7 @@
                 margin-bottom: 40px;
               "
             >
-              PRESENTADO POR
+              INTEGRADO POR
             </p>
 
             <!-- Lista de nombres con animación -->
@@ -272,6 +259,53 @@
               Powered by <span style="color: #61dafb">Leidy & Company</span> ·
               2025
             </p>
+          </div>
+        </section>
+
+         <section data-background="#ffffff" data-transition="zoom">
+          <div style="text-align: center">
+            <h2>Componentes + Vitest</h2>
+            
+            <div style="margin-bottom: 20px">
+              <img src="./examples/assets/react.png" width="100" style="display: inline-block; vertical-align: middle;" />
+              <p style="
+                color: #161616;
+                font-size: 2em;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 0 0 10px; /* Margen izquierdo para separación */
+              ">
+                <strong>React</strong>
+              </p>
+              <hr>
+            </div>
+
+            <img src="./examples/assets/Tailwind.png" width="100" style="display: inline-block; vertical-align: middle;" />
+              <p style="
+                color: #161616;
+                font-size: 1.5em;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 0 0 10px; /* Margen izquierdo para separación */
+              ">
+              Tailwind CSS</strong> 
+              </p>
+              <br>
+              <img src="./examples/assets/Vitest.png" width="100" style="display: inline-block; vertical-align: middle;" />
+              <p style="
+                color: #161616;
+                font-size: 2em;
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 0 0 10px; /* Margen izquierdo para separación */
+              ">
+              <strong>Vitest</strong>
+              </p>
+            <div style="margin-top: 40px">
+              <span class="tech-badge"><a href="#/tailwind-section">Tailwind CSS</a></span>
+              <span class="tech-badge"><a href="#/patrones-section">Patrones de Componentes</a></span>
+              <span class="tech-badge">Testing-Library</span>
+            </div>
           </div>
         </section>
 
@@ -548,7 +582,7 @@ tailwind.config.js
           
 
         <section>
-          <h1 style="text-align: center;"> Ejemplo Práctico</h1>        
+          <h1 style="text-align: center;"> Ejemplo </h1>        
           <pre><code class="hljs language-html" data-trim>
 <form class="max-w-md mx-auto p-4 border rounded shadow space-y-4">
   <input
@@ -581,17 +615,19 @@ tailwind.config.js
               </div>
             </div>
         </section>
+        <section>
+  <h2>¿Volver al inicio?</h2>
+  <button onclick="Reveal.slide(1, 1)" 
+          style="padding: 10px 20px; background: #013341; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    Click para reiniciar
+  </button>
+</section>
 
         <!-- Tema 2: Componentes -->
-        <section id="patrones-section" data-transition="concave" data-background-transition="slide">
-          <h1  style="text-align: center;">Patrones de Componentes</h1>
-          <h2 style="text-align: center;">Props + Children + Composición</h2>
-        </section>
-
-        <section>
-          <h1 style="text-align: center;">¿Qué son?</h1>
-          <p class="fragment" style="text-align: justify; font-size: 2rem;">
-            Los componentes son las partes principales y reutilizables que forman una aplicación web hecha con React. </p>
+        <section data-background="#ffffff" id="patrones-section" data-transition="concave" data-background-transition="slide">
+          <h1 style="text-align: center;">Patrones de Componentes</h1>
+          <p style="text-align: justify; font-size: 2rem;">
+           Son las partes principales y reutilizables que forman una aplicación web hecha con React. </p>
           <p class="fragment" style="text-align: justify; font-size: 2rem;">
             Los patrones de componentes como 
             <span class="tooltip" tabindex="0">
@@ -607,23 +643,14 @@ tailwind.config.js
 
         
         <!-- Slide 2: Componentes -->
-        <section>
-          <h2 style="margin-bottom: 50px;text-align: center;">Desarrollo Componentizado<br><small>Como construir un coche</small></h2>
-          <p style="text-align: justify; font-size: 1.4rem; color: rgb(226, 241, 5);">
+        <section data-background="#ffffff">
+          <h2 style="margin-bottom: 50px;text-align: center;">Desarrollo con Componentes<br></h2>
+          <h4 style="text-align: center;"><strong>Como construir un coche</strong> </h4>
+          <p style="text-align: justify; font-size: 1.7rem; color: rgb(3, 1, 77);">
             <br>Cada parte es un componente: el volante, las ruedas, los asientos, el motor, etc.
-            <br>Cada parte tiene su propia función y puede ser ensamblada para formar el coche completo.
+            Cada parte tiene su propia función y puede ser ensamblada para formar el coche completo.
           </p>
-          <div class="car-analogy">
-            <div class="car-component" id="car-analogy">
-                <img src="https://cdn-icons-png.flaticon.com/512/3073/3073625.png" alt="Coche">
-                <div class="component-info">
-                  <p class="component-name">Coche</p>
-                  <p class="component-code">Car.jsx</p>
-                </div>
-            </div>
-            <!-- Línea de ensamblaje -->
-            <div class="assembly-line"></div>
-
+          <div class="car-analogy">      
             <!-- Fragmentos para animar los componentes -->
             <span class="fragment" data-component-index="0"></span>
             <span class="fragment" data-component-index="1"></span>
@@ -675,7 +702,7 @@ tailwind.config.js
           </div>          
         </section>
 
-        <section>
+        <section data-background="#ffffff">
           <h1 style="text-align: center;">¿Para qué sirven?</h1>
           <ul>
             <li>Organizar código en partes pequeñas.</li>
@@ -684,7 +711,7 @@ tailwind.config.js
           </ul>
         </section>       
 
-        <section>                 
+        <section data-background="#ffffff">                 
               <h1 style="text-align: center;">Sintaxis</h1>
               <pre><code class="language-jsx">import React from 'react';
 
@@ -703,17 +730,7 @@ const Card = ({ title, children }) => (
 </code></pre>            
         </section>
 
-        <section>
-          <h2 style="text-align: center;">Casos de uso comunes</h2>
-          <ul>
-            <li>Botones con comportamiento dinámico</li>
-            <li>Layouts: Header + Sidebar + Content</li>
-            <li>Formularios reutilizables</li>
-            <li>Modales, tooltips, dropdowns</li>
-          </ul>
-        </section>
-
-        <section>
+        <section data-background="#ffffff">
           <h2 style="text-align: center;">Comparación rápida</h2>
 
           <style>
@@ -793,22 +810,21 @@ const Card = ({ title, children }) => (
             </tr>
           </tbody>
         </table>
-        </section>        
+        </section>  
 
-        <section>
-          <h3>Ejercicio práctico</h3>
-          <p>Crea un componente <code>Alert</code> que reciba:</p>
+        <section data-background="#ffffff">
+          <h1 style="text-align: center;">Casos de Uso</h1>
           <ul>
-            <li>Una prop <code>type</code> ("success", "error", "info")</li>
-            <li>Children con el mensaje</li>
+            <li class="fragment" style="text-align: justify;">Botones con comportamiento dinámico</li>
+            <li class="fragment" style="text-align: justify;">Layouts: Header + Sidebar + Content</li>
+            <li class="fragment" style="text-align: justify;">Formularios reutilizables</li>
+            <li class="fragment" style="text-align: justify;">Modales, tooltips, dropdowns</li>
           </ul>
-          <pre><code class="hljs jsx" data-trim>
-<Alert type="success">Guardado exitosamente</Alert>
-          </code></pre>
-          <p>🎯 Desafío: Usa className dinámico para cambiar color según el tipo</p>
         </section>
 
-        
+              
+
+               
         <!-- Tema 3: Testing -->
         <section>
           <h2>Tema 3: Testing</h2>
