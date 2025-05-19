@@ -907,7 +907,22 @@ const Card = ({ title, children }) => (
 <h3 style="text-align: center;"> 📦 Instalación</h3>
 <pre><code class="hljs language-bash" data-trim>
 npm install -D vitest @testing-library/react @testing-library/user-event @testing-library/jest-dom
-          </code></pre>        
+          </code></pre>   
+          <aside class="notes">
+    📌 **Motor de pruebas**: significa que Vitest es una herramienta que permite:
+    Ejecutar tests unitarios y de componentes.
+    Comprobar que tu código hace lo que se espera.
+    Automatizar la validación del comportamiento de tu aplicación.
+    <br>📌 ** Rápido**: Está construido sobre Vite, que usa esbuild, un empaquetador extremadamente rápido.
+    Utiliza ejecución en paralelo y cacheo inteligente.
+    Soporta HMR (Hot Module Replacement) durante las pruebas en modo watch, lo que actualiza solo lo necesario sin volver a cargar todo.
+    <br>📌 ** Moderno**: Soporta ESModules (import/export) de forma nativa.
+    Tiene una sintaxis parecida a Jest, lo que lo hace familiar pero más ágil.
+    Integra herramientas modernas como:
+    @testing-library/user-event para simular interacciones.
+    TypeScript sin necesidad de configuración extra.
+    Permite pruebas en proyectos con frameworks modernos como React, Vue, Svelte, etc.
+    </aside>     
 </section>
 
 <section>
